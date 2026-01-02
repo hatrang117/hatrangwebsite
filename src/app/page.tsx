@@ -95,10 +95,10 @@ export default function Home() {
           </div>
           
           <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-            The Magic of Being
+            A Gentle Corner Of My World
           </h2>
           <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-relaxed mb-10 italic">
-            &quot;A gentle corner of my world—where I collect dreams, create with heart, and share the little things that matter most to me;
+            &quot;A space where I collect dreams, create with heart, and share the little things that matter most to me."
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -116,7 +116,7 @@ export default function Home() {
 
       <footer className="mt-24 pb-12 text-center relative z-10">
         <p className="font-aesthetic text-lg text-[#7a5a65]">
-          Designed with magic, strawberries & flowers
+          Designed with care, soft dreams, and a love for little details
         </p>
       </footer>
     </div>
