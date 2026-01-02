@@ -5,12 +5,12 @@ import FloatingElements from "@/components/FloatingElements";
 
 
 const theatreShows = [
-  { title: "Leading Role", description: "My debut as a lead performer on stage." },
-  { title: "Musical Magic", description: "Singing my heart out in the spotlight." },
-  { title: "Dance & Drama", description: "Where movement tells the story." },
+  { title: "First Big Stage", description: "My debut performance in a large-scale show, stepping onto a major stage for the first time." },
+  { title: "Practice Days", description: "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it." },
+  { title: "Between Beats & Breath", description: "Where connection mattered more than perfection." },
   { title: "Backstage Moments", description: "The excitement before the curtain rises." },
-  { title: "Ensemble Joy", description: "Creating magic with amazing castmates." },
   { title: "Standing Ovation", description: "The most rewarding feeling." },
+  { title: "More Than Performance", description: "What stayed with me long after the music stopped." },
 ];
 
 export default function Theatre() {
@@ -23,7 +23,7 @@ export default function Theatre() {
           Theatre Life
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
-          The stage is my garden, every performance a bloom
+          Between lights and quiet breaths, the stage becomes a place where I listen, transform, and begin again
         </p>
 
 
