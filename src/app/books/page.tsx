@@ -21,7 +21,7 @@ export default function Books() {
 
       <header className="mb-20 text-center relative z-10">
         <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6 tracking-tight">
-          Books I Love
+          Books
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
           Pages of magic gathered in my reading garden
