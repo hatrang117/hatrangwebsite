@@ -5,7 +5,7 @@ import FloatingElements from "@/components/FloatingElements";
 
 
 const slimeProducts = [
-  { title: "CEO & Founder", description: "Leading with creativity and passion. My vision is to bring magic to every touch." },
+  { title: "Founder & Financial Lead", description: "Leading with creativity and passion. My vision is to bring magic to every touch." },
   { title: "Cloud Slime", description: "Soft, fluffy, and dreamy like cotton candy clouds." },
   { title: "Butter Slime", description: "Smooth and spreadable, utterly satisfying." },
   { title: "Clear Slime", description: "Crystal clear and mesmerizing." },
