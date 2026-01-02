@@ -6,20 +6,21 @@ import FloatingElements from "@/components/FloatingElements";
 
 const profileSections = [
   {
-    title: "Welcome to My World",
+    title: "About myself",
     description: "Hi, I'm Le Ha Trang! A dreamer, creator, and lover of all things magical.",
   },
   {
-    title: "About Me",
-    description: "I'm passionate about music, theatre, books, and building creative businesses.",
+    title: "My beloved ones",
+    description: "I hold relationships close to my heart. Family and friends are my grounding force—the people who shape who I am and make life feel fuller. I treasure shared meals, long conversations, and the quiet comfort of simply being together. To me, love is time spent, moments shared, and the choice to show up for one another, always.",
   },
   {
     title: "My Passions",
-    description: "From playing piano to running a slime startup, I embrace every creative adventure.",
+    description: "I find joy in simple, creative moments—playing the piano and letting melodies carry my thoughts, baking for the people I love, and experimenting with colors and textures through my small slime shop. When I need quiet inspiration, I turn to books, where stories help me slow down, imagine freely, and see the world from new perspectives. These passions shape how I create, how I rest, and how I express myself every day.",
   },
   {
-    title: "Dream & Create",
-    description: "I believe in the magic of following your dreams. Join me on this journey!",
+    title: "Once Upon a Time",
+    description: "Where It All Began
+Where my story began—soft memories, curious eyes, and endless wonder. Wrapped in love and gentle care, I grew up dreaming freely, collecting little moments of joy and imagination. In that safe, happy world, curiosity bloomed, dreams felt possible, and the dreamer I am today quietly began to grow.",
   },
 ];
 
