@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import GardenBackground from "@/components/GardenBackground";
 
 export const metadata: Metadata = {
-  title: "Le Ha Trang | Personal Archive",
+  title: "Le Ha Trang | Personal Portfolio",
   description: "A magical personal portfolio by Le Ha Trang",
 };
 
