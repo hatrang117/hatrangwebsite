@@ -98,12 +98,11 @@ export default function Home() {
             The Magic of Being
           </h2>
           <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-relaxed mb-10 italic">
-            &quot;In this garden of dreams, every petal tells a story, every breeze carries a melody, 
-            and every strawberry holds a bit of magic.&quot;
+            &quot;A gentle corner of my world—where I collect dreams, create with heart, and share the little things that matter most to me;
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {["Piano", "Theatre", "Books", "Slime", "Research", "Dreaming"].map((tag) => (
+            {["Piano", "Theatre", "Books", "Slime", "Research", "Family"].map((tag) => (
               <span
                 key={tag}
                 className="px-5 py-2 rounded-full glass-card font-aesthetic text-sm text-[#d88a9e] border border-[#e8a4b8]/30"
