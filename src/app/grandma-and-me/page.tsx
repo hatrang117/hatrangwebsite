@@ -44,7 +44,7 @@ export default function GrandmaAndMe() {
       <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
         <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
           <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-            A Legacy of Love
+            A Legacy Of Love
           </h2>
           <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
             &quot;A grandmother&apos;s love is the richest treasure—sweet, nourishing, 
