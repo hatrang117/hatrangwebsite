@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MagicalFrame from "@/components/MagicalFrame";
 import FloatingElements from "@/components/FloatingElements";
 
@@ -40,6 +40,15 @@ export default function Theatre() {
     index: number;
   }>(null);
 
+  // ❌ khóa scroll nền khi mở modal
+  useEffect(() => {
+    if (activeShow) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [activeShow]);
+
   return (
     <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
       <FloatingElements />
@@ -58,13 +67,8 @@ export default function Theatre() {
       {/* GRID */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
         {theatreShows.map((show, index) => (
-          <MagicalFrame
+          <button
             key={index}
-            title={show.title}
-            description={show.description}
-            index={index}
-            aspectRatio="square"
-            className="cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500"
             onClick={() =>
               setActiveShow({
                 title: show.title,
@@ -72,42 +76,52 @@ export default function Theatre() {
                 index,
               })
             }
-          />
+            className="text-left focus:outline-none"
+          >
+            <MagicalFrame
+              title={show.title}
+              description={show.description}
+              index={index}
+              aspectRatio="square"
+              className="cursor-pointer hover:scale-[1.03] transition-transform duration-500"
+            />
+          </button>
         ))}
       </div>
 
-      {/* MODAL */}
+      {/* MODAL ZOOM */}
       {activeShow && (
-        <div className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm flex items-center justify-center px-4">
-          <div className="relative w-full max-w-4xl h-[90vh] bg-[#fff5f8] rounded-[2.5rem] shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-md flex items-center justify-center px-4">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#fff1f5] shadow-2xl p-6 md:p-10">
 
-            {/* CLOSE */}
+            {/* ❌ CLOSE */}
             <button
               onClick={() => setActiveShow(null)}
-              className="absolute top-6 right-6 z-20 text-3xl text-[#9a7c85] hover:text-[#d88a9e]"
+              className="absolute top-5 right-6 text-3xl text-[#9a7c85] hover:text-[#d88a9e] transition"
             >
-              ✕
+              ×
             </button>
 
-            {/* SCROLL AREA */}
-            <div className="h-full overflow-y-auto p-8 md:p-14">
+            {/* ZOOM IMAGE */}
+            <div className="mb-8">
               <MagicalFrame
                 title={activeShow.title}
                 description=""
                 index={activeShow.index}
                 aspectRatio="square"
-                className="shadow-xl"
+                className="scale-100"
               />
+            </div>
 
-              <div className="mt-10 text-center">
-                <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-                  {activeShow.title}
-                </h2>
+            {/* FULL DESCRIPTION */}
+            <div className="text-center px-4 pb-4">
+              <h2 className="font-fairy text-4xl text-[#d88a9e] mb-4">
+                {activeShow.title}
+              </h2>
 
-                <p className="font-elegant text-lg md:text-xl text-[#5c4a50] leading-relaxed whitespace-pre-line">
-                  {activeShow.description}
-                </p>
-              </div>
+              <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-relaxed">
+                {activeShow.description}
+              </p>
             </div>
           </div>
         </div>
