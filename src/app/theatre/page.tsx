@@ -1,111 +1,97 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import MagicalFrame from "@/components/MagicalFrame";
+import FloatingElements from "@/components/FloatingElements";
 
-interface MagicalFrameProps {
-  title: string;
-  description: string;
-  index: number;
-  aspectRatio?: "square" | "portrait" | "landscape";
-  className?: string;
-}
+const theatreShows = [
+  {
+    title: "First Big Stage",
+    description:
+      "My debut performance in a large-scale show, stepping onto a major stage for the first time.",
+  },
+  {
+    title: "Practice Days",
+    description:
+      "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it.",
+  },
+  {
+    title: "Between Beats & Breath",
+    description: "Where connection mattered more than perfection.",
+  },
+  {
+    title: "Backstage Moments",
+    description: "The excitement before the curtain rises.",
+  },
+  {
+    title: "Standing Ovation",
+    description: "The most rewarding feeling.",
+  },
+  {
+    title: "More Than Performance",
+    description: "What stayed with me long after the music stopped.",
+  },
+];
 
-export default function MagicalFrame({
-  title,
-  description,
-  index,
-  aspectRatio = "square",
-  className = "",
-}: MagicalFrameProps) {
-  const [open, setOpen] = useState(false);
-
-  const ratioClass =
-    aspectRatio === "portrait"
-      ? "aspect-[3/4]"
-      : aspectRatio === "landscape"
-      ? "aspect-[4/3]"
-      : "aspect-square";
-
+export default function Theatre() {
   return (
-    <>
-      {/* CARD */}
-      <div
-        onClick={() => setOpen(true)}
-        className={`cursor-pointer rounded-3xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/30 ${className}`}
-      >
-        <div className={`relative w-full ${ratioClass}`}>
-          <Image
-            src={`/images/frame-${index + 1}.jpg`}
-            alt={title}
-            fill
-            className="object-cover"
-          />
-        </div>
+    <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
+      <FloatingElements />
 
-        <div className="p-6">
-          <h3 className="font-fairy text-2xl text-[#d88a9e] mb-2">
-            {title}
-          </h3>
-          <p className="font-aesthetic text-[#6b555c] line-clamp-2">
-            {description}
-          </p>
-        </div>
+      <header className="mb-20 text-center relative z-10">
+        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6 tracking-tight">
+          Theatre Life
+        </h1>
+        <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
+          Between lights and quiet breaths, the stage becomes a place where I
+          listen, transform, and begin again
+        </p>
+      </header>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
+        {theatreShows.map((show, index) => (
+          <div key={index} className="w-full">
+            <MagicalFrame
+              title={show.title}
+              description={show.description}
+              index={index}
+              aspectRatio="square"
+              className="shadow-lg hover:shadow-2xl transition-shadow duration-500"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* MODAL */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 z-[999] bg-black/70 backdrop-blur-md flex items-center justify-center px-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setOpen(false)}
-          >
-            <motion.div
-              className="relative max-w-5xl w-full max-h-[90vh] bg-[#feeaf0] rounded-[2.5rem] overflow-hidden"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 120 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* SCROLL AREA */}
-              <div className="overflow-y-auto max-h-[90vh]">
-                {/* IMAGE */}
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={`/images/frame-${index + 1}.jpg`}
-                    alt={title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
+      <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
+        <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
+          <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
+            The World is a Stage
+          </h2>
 
-                {/* CAPTION */}
-                <div className="p-10 text-center">
-                  <h3 className="font-fairy text-4xl text-[#d88a9e] mb-6">
-                    {title}
-                  </h3>
-                  <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-              </div>
+          <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
+            &quot;Theatre is sweet, bold, and full of surprises. In every role, I
+            plant a seed of emotion and watch it bloom into a performance.&quot;
+          </p>
 
-              {/* CLOSE */}
-              <button
-                onClick={() => setOpen(false)}
-                className="absolute top-6 right-6 text-[#d88a9e] text-2xl font-bold"
-              >
-                ×
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+          <div className="flex flex-wrap justify-center gap-4">
+            {["Acting", "Singing", "Dancing", "Expression", "Magic"].map(
+              (item, i) => (
+                <span
+                  key={i}
+                  className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card"
+                >
+                  {item}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      <footer className="mt-24 pb-12 text-center relative z-10">
+        <p className="font-aesthetic text-lg text-[#9a7c85] mt-4">
+          The curtain never falls in my heart
+        </p>
+      </footer>
+    </div>
   );
 }
