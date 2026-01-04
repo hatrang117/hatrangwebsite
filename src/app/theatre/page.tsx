@@ -40,7 +40,7 @@ export default function Theatre() {
     index: number;
   }>(null);
 
-  // ❌ khóa scroll nền khi mở modal
+  // Lock background scroll when modal is open
   useEffect(() => {
     if (activeShow) {
       document.body.style.overflow = "hidden";
@@ -89,32 +89,37 @@ export default function Theatre() {
         ))}
       </div>
 
-      {/* MODAL ZOOM */}
+      {/* MODAL */}
       {activeShow && (
-        <div className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-md flex items-center justify-center px-4">
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#fff1f5] shadow-2xl p-6 md:p-10">
-
-            {/* ❌ CLOSE */}
+        <div
+          className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-md flex items-center justify-center px-4"
+          onClick={() => setActiveShow(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#fff1f5] shadow-2xl p-6 md:p-10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CLOSE BUTTON */}
             <button
               onClick={() => setActiveShow(null)}
-              className="absolute top-5 right-6 text-3xl text-[#9a7c85] hover:text-[#d88a9e] transition"
+              className="absolute top-5 right-6 z-[1000] text-4xl text-[#9a7c85] hover:text-[#d88a9e] transition pointer-events-auto"
+              aria-label="Close"
             >
               ×
             </button>
 
-            {/* ZOOM IMAGE */}
-            <div className="mb-8">
+            {/* ZOOMED FRAME */}
+            <div className="mb-8 pointer-events-none">
               <MagicalFrame
                 title={activeShow.title}
                 description=""
                 index={activeShow.index}
                 aspectRatio="square"
-                className="scale-100"
               />
             </div>
 
-            {/* FULL DESCRIPTION */}
-            <div className="text-center px-4 pb-4">
+            {/* DESCRIPTION */}
+            <div className="text-center px-4 pb-4 pointer-events-auto">
               <h2 className="font-fairy text-4xl text-[#d88a9e] mb-4">
                 {activeShow.title}
               </h2>
