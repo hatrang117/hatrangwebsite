@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MagicalFrame from "@/components/MagicalFrame";
 import FloatingElements from "@/components/FloatingElements";
 
@@ -27,24 +27,6 @@ Where my story began—soft memories, curious eyes, and endless wonder. Wrapped 
   },
 ];
 
-const Strawberry = ({ size = 28 }: { size?: number }) => (
-  <svg width={size} height={size * 1.1} viewBox="0 0 50 55" fill="none">
-    <path d="M25 15 C10 15 5 30 5 38 C5 50 15 52 25 52 C35 52 45 50 45 38 C45 30 40 15 25 15Z" fill="#F5B5C8" />
-    <ellipse cx="15" cy="30" rx="3" ry="4" fill="#FEE8EE" />
-    <ellipse cx="35" cy="32" rx="3" ry="4" fill="#FEE8EE" />
-    <ellipse cx="25" cy="42" rx="3" ry="4" fill="#FEE8EE" />
-    <path d="M25 15 L20 8 Q15 5 12 10 L18 15" fill="#C5D98A" />
-    <path d="M25 15 L30 8 Q35 5 38 10 L32 15" fill="#C5D98A" />
-  </svg>
-);
-
-const LeafDecor = ({ size = 30 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 50 50" fill="none">
-    <path d="M10 40 Q5 25 15 15 Q25 5 40 10 Q50 15 45 30 Q40 45 25 45 Q15 45 10 40Z" fill="#B8D468" />
-    <path d="M12 38 Q20 25 38 12" stroke="#9ABF4A" strokeWidth="2" fill="none" strokeLinecap="round" />
-  </svg>
-);
-
 export default function Home() {
   const [activeSection, setActiveSection] = useState<{
     title: string;
@@ -52,8 +34,20 @@ export default function Home() {
     index: number;
   } | null>(null);
 
+  // 🔒 Lock background scroll when modal opens
+  useEffect(() => {
+    if (activeSection) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeSection]);
+
   return (
-    <div className="min-h-screen py-12 px-6 md:px-12 lg:px-20 relative bg-[#feeaf0]">
+    <div className="min-h-screen py-12 px-6 md:px-12 lg:px-20 bg-[#feeaf0] relative">
       <FloatingElements />
 
       {/* HEADER */}
@@ -72,9 +66,7 @@ export default function Home() {
           <div
             key={index}
             className="cursor-pointer"
-            onClick={() =>
-              setActiveSection({ ...section, index })
-            }
+            onClick={() => setActiveSection({ ...section, index })}
           >
             <MagicalFrame
               title={section.title}
@@ -87,69 +79,54 @@ export default function Home() {
         ))}
       </div>
 
-      {/* MODAL */}
+      {/* MODAL OVERLAY */}
       {activeSection && (
         <div
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md overflow-y-auto"
           onClick={() => setActiveSection(null)}
         >
+          {/* MODAL CONTAINER */}
           <div
-            className="relative max-w-3xl w-full mx-6 glass-card rounded-[3rem] p-10 md:p-14"
+            className="min-h-screen flex items-start justify-center py-16 px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close */}
-            <button
-              onClick={() => setActiveSection(null)}
-              className="absolute top-6 right-6 text-2xl text-[#7a5a65]"
-            >
-              ×
-            </button>
+            <div className="relative max-w-3xl w-full glass-card rounded-[3rem] p-10 md:p-14">
+              {/* Close */}
+              <button
+                onClick={() => setActiveSection(null)}
+                className="absolute top-6 right-6 text-2xl text-[#7a5a65] hover:opacity-70"
+              >
+                ×
+              </button>
 
-            {/* Image */}
-            <div className="mb-8">
-              <MagicalFrame
-                title={activeSection.title}
-                description=""
-                index={activeSection.index}
-                aspectRatio="square"
-                className="shadow-2xl pointer-events-none"
-              />
+              {/* IMAGE */}
+              <div className="mb-10">
+                <MagicalFrame
+                  title={activeSection.title}
+                  description=""
+                  index={activeSection.index}
+                  aspectRatio="square"
+                  className="shadow-2xl pointer-events-none"
+                />
+              </div>
+
+              {/* FULL CAPTION */}
+              <h2 className="font-fairy text-4xl text-[#b86b7e] mb-6 text-center">
+                {activeSection.title}
+              </h2>
+
+              <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed whitespace-pre-line text-center">
+                {activeSection.description}
+              </p>
             </div>
-
-            {/* Caption FULL */}
-            <h2 className="font-fairy text-4xl text-[#b86b7e] mb-4 text-center">
-              {activeSection.title}
-            </h2>
-            <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed text-center whitespace-pre-line">
-              {activeSection.description}
-            </p>
           </div>
         </div>
       )}
 
-      {/* GENTLE CORNER */}
-      <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
-        <div className="glass-card rounded-[3rem] p-14 relative overflow-hidden">
-          <div className="absolute top-4 right-4 opacity-50">
-            <Strawberry size={40} />
-          </div>
-          <div className="absolute bottom-4 left-4 opacity-50">
-            <LeafDecor size={36} />
-          </div>
-
-          <h2 className="font-fairy text-4xl text-[#d88a9e] mb-6">
-            A Gentle Corner Of My World
-          </h2>
-          <p className="font-elegant text-xl text-[#5c4a50] italic">
-            “A space where I collect dreams, create with heart, and share the little things that matter most to me.”
-          </p>
-        </div>
-      </section>
-
-      <footer className="mt-24 text-center text-[#7a5a65]">
+      {/* FOOTER */}
+      <footer className="mt-24 text-center text-[#7a5a65] relative z-10">
         Designed with care, soft dreams, and a love for little details
       </footer>
     </div>
   );
 }
-
