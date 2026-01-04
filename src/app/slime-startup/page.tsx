@@ -34,7 +34,7 @@ export default function SlimeStartup() {
 
       {/* HEADER */}
       <header className="mb-20 text-center relative z-10">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6">
+        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] mb-6">
           Slime Startup
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
@@ -43,59 +43,34 @@ export default function SlimeStartup() {
       </header>
 
       {/* GRID */}
-      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
-        {/* FEATURED */}
-        <div
-          className="flex justify-center cursor-pointer"
-          onClick={() =>
-            setActiveItem({
-              title: slimeProducts[0].title,
-              description: slimeProducts[0].description,
-              index: 0,
-            })
-          }
-        >
-          <div className="w-full max-w-3xl">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        {slimeProducts.map((item, index) => (
+          <div
+            key={index}
+            className="cursor-pointer"
+            onClick={() =>
+              setActiveItem({
+                title: item.title,
+                description: item.description,
+                index,
+              })
+            }
+          >
             <MagicalFrame
-              title={slimeProducts[0].title}
-              description={slimeProducts[0].description}
-              index={0}
+              title={item.title}
+              description={item.description}
+              index={index}
               aspectRatio="square"
-              className="shadow-2xl hover:scale-[1.02] transition"
+              className="shadow-lg hover:scale-[1.03] transition"
             />
           </div>
-        </div>
-
-        {/* OTHERS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {slimeProducts.slice(1).map((product, index) => (
-            <div
-              key={index}
-              className="w-full cursor-pointer"
-              onClick={() =>
-                setActiveItem({
-                  title: product.title,
-                  description: product.description,
-                  index: index + 1,
-                })
-              }
-            >
-              <MagicalFrame
-                title={product.title}
-                description={product.description}
-                index={index + 1}
-                aspectRatio="square"
-                className="shadow-lg hover:scale-[1.03] transition"
-              />
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
 
-      {/* MODAL */}
+      {/* ===== MODAL ===== */}
       {activeItem && (
         <div className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
-          <div className="relative bg-[#fff1f5] w-full max-w-3xl max-h-[90vh] rounded-[2.5rem] shadow-2xl overflow-hidden">
+          <div className="relative bg-[#fff1f5] w-full max-w-4xl max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-2xl">
 
             {/* CLOSE */}
             <button
@@ -105,43 +80,39 @@ export default function SlimeStartup() {
               ×
             </button>
 
-            {/* SCROLL AREA */}
-            <div className="h-full overflow-y-auto p-8">
+            {/* SCROLL */}
+            <div className="h-full overflow-y-auto">
 
-              {/* IMAGE */}
-              <div className="w-full aspect-square rounded-2xl bg-[#f6c1cf] flex items-center justify-center mb-10 shadow-inner">
-                <span className="font-fairy text-3xl text-white opacity-80">
-                  Image {activeItem.index + 1} ✨
+              {/* IMAGE = FRAME ĐƯỢC ZOOM LÊN */}
+              <div className="w-full aspect-square bg-[#f6c1cf] flex items-center justify-center">
+                <span className="font-fairy text-4xl text-white opacity-80">
+                  Slime #{activeItem.index + 1}
                 </span>
               </div>
 
-              {/* TEXT */}
-              <h2 className="font-fairy text-4xl text-center text-[#d88a9e] mb-6">
-                {activeItem.title}
-              </h2>
+              {/* TEXT CONTENT */}
+              <div className="p-10">
+                <h2 className="font-fairy text-4xl text-center text-[#d88a9e] mb-6">
+                  {activeItem.title}
+                </h2>
 
-              <p className="font-elegant text-xl text-[#5c4a50] text-center leading-relaxed mb-10">
-                {activeItem.description}
-              </p>
-
-              {/* EXTRA CONTENT (SCROLL DEMO) */}
-              {Array.from({ length: 8 }).map((_, i) => (
-                <p key={i} className="text-[#5c4a50] mb-4 leading-relaxed">
-                  Slime is more than texture — it is joy, calm, curiosity, and a small
-                  pocket of magic you can return to whenever the world feels too loud.
+                <p className="font-elegant text-xl text-[#5c4a50] text-center leading-relaxed mb-10">
+                  {activeItem.description}
                 </p>
-              ))}
+
+                {/* DEMO SCROLL */}
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <p key={i} className="text-[#5c4a50] mb-4 leading-relaxed">
+                    Slime is not just something you touch — it is a sensory pause,
+                    a soft moment of calm, and a reminder that joy can be simple.
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       )}
-
-      {/* FOOTER */}
-      <footer className="mt-24 pb-12 text-center relative z-10">
-        <p className="font-aesthetic text-lg text-[#9a7c85]">
-          Spread the magic, one squish at a time
-        </p>
-      </footer>
     </div>
   );
 }
+
