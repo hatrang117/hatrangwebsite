@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 interface MagicalFrameProps {
@@ -22,7 +23,7 @@ export default function MagicalFrame({
 }: MagicalFrameProps) {
   const [open, setOpen] = useState(false);
 
-  // LOCK BODY SCROLL
+  // Lock background scroll
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -40,9 +41,10 @@ export default function MagicalFrame({
   return (
     <>
       {/* CARD */}
-      <div
+      <motion.div
+        whileHover={{ scale: 1.03 }}
         onClick={() => setOpen(true)}
-        className={`cursor-pointer glass-card rounded-3xl overflow-hidden hover:scale-[1.02] transition ${className}`}
+        className={`cursor-pointer glass-card rounded-3xl overflow-hidden ${className}`}
       >
         <div className={`relative w-full ${ratioClass}`}>
           <Image
@@ -61,48 +63,58 @@ export default function MagicalFrame({
             {description}
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* MODAL */}
-      {open && (
-        <div
-          className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm flex items-center justify-center"
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="bg-[#fff6f9] rounded-[2.5rem] w-[92vw] max-w-3xl max-h-[90vh] flex flex-col overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
           >
-            {/* MEDIA */}
-            <div className="relative w-full aspect-square shrink-0">
-              {showVideo ? (
-                <video
-                  src={`/videos/${index + 1}.mp4`}
-                  controls
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <Image
-                  src={`/images/${index + 1}.jpg`}
-                  alt={title}
-                  fill
-                  className="object-cover"
-                />
-              )}
-            </div>
+            {/* 🔥 SCROLL CONTAINER – CHỈ THÊM PHẦN NÀY */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#fff6f9] rounded-[2.5rem] w-[92vw] max-w-3xl max-h-[90vh] overflow-y-auto"
+            >
+              {/* MEDIA */}
+              <div className="relative w-full aspect-square">
+                {showVideo ? (
+                  <video
+                    src={`/videos/${index + 1}.mp4`}
+                    controls
+                    className="w-full h-full object-cover rounded-t-[2.5rem]"
+                  />
+                ) : (
+                  <Image
+                    src={`/images/${index + 1}.jpg`}
+                    alt={title}
+                    fill
+                    className="object-cover rounded-t-[2.5rem]"
+                  />
+                )}
+              </div>
 
-            {/* SCROLLABLE CAPTION */}
-            <div className="px-8 py-6 overflow-y-auto">
-              <h3 className="font-fairy text-3xl text-[#d88a9e] mb-4 text-center">
-                {title}
-              </h3>
-              <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed text-center whitespace-pre-line">
-                {description}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+              {/* CAPTION */}
+              <div className="px-8 py-8 text-center">
+                <h3 className="font-fairy text-3xl text-[#d88a9e] mb-4">
+                  {title}
+                </h3>
+                <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed whitespace-pre-line">
+                  {description}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
