@@ -1,92 +1,130 @@
 "use client";
 
-import MagicalFrame from "@/components/MagicalFrame";
-import FloatingElements from "@/components/FloatingElements";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
+interface MagicalFrameProps {
+  title: string;
+  description: string;
+  index: number;
+  showVideo?: boolean;
+  aspectRatio?: "square" | "portrait" | "landscape";
+  className?: string;
+}
 
-const slimeProducts = [
-  { title: "Founder & Financial Lead", description: "Leading with creativity and passion. My vision is to bring magic to every touch." },
-  { title: "Cloud Slime", description: "Soft, fluffy, and dreamy like cotton candy clouds." },
-  { title: "Butter Slime", description: "Smooth and spreadable, utterly satisfying." },
-  { title: "Clear Slime", description: "Crystal clear and mesmerizing." },
-  { title: "Glitter Slime", description: "Sparkly magic in every stretch." },
-  { title: "Strawberry Special", description: "Our signature berry-themed creation." },
-  { title: "Galaxy Slime", description: "Swirls of cosmic colors and sparkle." },
-  { title: "Honey Slime", description: "Golden, thick, and oh-so-satisfying." },
-  { title: "Foam Slime", description: "Light, airy, and fun to squish." },
-  { title: "Crunchy Slime", description: "Satisfying crunch with every poke." },
-];
+export default function MagicalFrame({
+  title,
+  description,
+  index,
+  showVideo = false,
+  aspectRatio = "square",
+  className = "",
+}: MagicalFrameProps) {
+  const [open, setOpen] = useState(false);
 
-export default function SlimeStartup() {
+  // LOCK BODY SCROLL khi modal mở
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const ratioClass =
+    aspectRatio === "portrait"
+      ? "aspect-[3/4]"
+      : aspectRatio === "landscape"
+      ? "aspect-[4/3]"
+      : "aspect-square";
+
   return (
-    <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
-      <FloatingElements />
-
-      <header className="mb-20 text-center relative z-10">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6 tracking-tight">
-          Slime Startup
-        </h1>
-        <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
-          Sensory magic handcrafted with love
-        </p>
-
-
-      </header>
-
-        <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
-          <div className="flex justify-center">
-            <div className="w-full max-w-3xl">
-              <MagicalFrame
-                title={slimeProducts[0].title}
-                description={slimeProducts[0].description}
-                index={0}
-                aspectRatio="square"
-                className="shadow-2xl"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {slimeProducts.slice(1).map((product, index) => (
-              <div key={index} className="w-full">
-                <MagicalFrame
-                  title={product.title}
-                  description={product.description}
-                  index={index + 1}
-                  aspectRatio="square"
-                  className="shadow-lg"
-                />
-              </div>
-            ))}
-          </div>
+    <>
+      {/* CARD */}
+      <div
+        onClick={() => setOpen(true)}
+        className={`cursor-pointer glass-card rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 ${className}`}
+      >
+        <div className={`relative w-full ${ratioClass}`}>
+          <Image
+            src={`/images/${index + 1}.jpg`}
+            alt={title}
+            fill
+            className="object-cover"
+          />
         </div>
 
-
-      <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
-        <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
-          <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-            The Science of Squish
-          </h2>
-          <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
-            &quot;Creating slime is like mixing a magic potion. You need the right 
-            amount of sparkle, a dash of color, and a whole lot of heart.&quot;
+        <div className="p-6 text-center">
+          <h3 className="font-fairy text-2xl text-[#d88a9e] mb-2">
+            {title}
+          </h3>
+          <p className="font-aesthetic text-[#7a5c64] line-clamp-2">
+            {description}
           </p>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Handmade", "Non-toxic", "Aesthetic", "Sparkly"].map((badge, i) => (
-              <span key={i} className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card">
-                {badge}
-              </span>
-            ))}
-          </div>
         </div>
-      </section>
+      </div>
 
-      <footer className="mt-24 pb-12 text-center relative z-10">
-        <p className="font-aesthetic text-lg text-[#9a7c85] mt-4">
-          Spread the magic, one squish at a time
-        </p>
-      </footer>
-    </div>
+      {/* MODAL */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+          >
+            {/* STOP CLICK LAN TRUYỀN */}
+            <motion.div
+              className="bg-[#fff6f9] rounded-[2.5rem] w-[92vw] max-w-3xl max-h-[90vh] flex flex-col overflow-hidden"
+              initial={{ scale: 0.9, y: 40 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 40 }}
+              transition={{ type: "spring", stiffness: 120 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* IMAGE / VIDEO */}
+              <div className="relative w-full aspect-square shrink-0">
+                {showVideo ? (
+                  <video
+                    src={`/videos/${index + 1}.mp4`}
+                    controls
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={`/images/${index + 1}.jpg`}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
+              </div>
+
+              {/* SCROLLABLE CAPTION */}
+              <div
+                className="
+                  px-8 py-6
+                  overflow-y-auto
+                  overscroll-contain
+                  scrollbar-thin
+                "
+              >
+                <h3 className="font-fairy text-3xl text-[#d88a9e] mb-4 text-center">
+                  {title}
+                </h3>
+                <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed text-center whitespace-pre-line">
+                  {description}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
