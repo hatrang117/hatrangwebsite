@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 interface MagicalFrameProps {
   title: string;
@@ -23,7 +22,6 @@ export default function MagicalFrame({
 }: MagicalFrameProps) {
   const [open, setOpen] = useState(false);
 
-  // Lock background scroll
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -38,6 +36,8 @@ export default function MagicalFrame({
       ? "aspect-[4/3]"
       : "aspect-square";
 
+  const imageSrc = `/images/${index + 1}.jpg`;
+
   return (
     <>
       {/* CARD */}
@@ -47,11 +47,10 @@ export default function MagicalFrame({
         className={`cursor-pointer glass-card rounded-3xl overflow-hidden ${className}`}
       >
         <div className={`relative w-full ${ratioClass}`}>
-          <Image
-            src={`/images/${index + 1}.jpg`}
+          <img
+            src={imageSrc}
             alt={title}
-            fill
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -75,7 +74,6 @@ export default function MagicalFrame({
             exit={{ opacity: 0 }}
             onClick={() => setOpen(false)}
           >
-            {/* 🔥 SCROLL CONTAINER – CHỈ THÊM PHẦN NÀY */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -84,7 +82,6 @@ export default function MagicalFrame({
               onClick={(e) => e.stopPropagation()}
               className="bg-[#fff6f9] rounded-[2.5rem] w-[92vw] max-w-3xl max-h-[90vh] overflow-y-auto"
             >
-              {/* MEDIA */}
               <div className="relative w-full aspect-square">
                 {showVideo ? (
                   <video
@@ -93,16 +90,14 @@ export default function MagicalFrame({
                     className="w-full h-full object-cover rounded-t-[2.5rem]"
                   />
                 ) : (
-                  <Image
-                    src={`/images/${index + 1}.jpg`}
+                  <img
+                    src={imageSrc}
                     alt={title}
-                    fill
-                    className="object-cover rounded-t-[2.5rem]"
+                    className="w-full h-full object-cover rounded-t-[2.5rem]"
                   />
                 )}
               </div>
 
-              {/* CAPTION */}
               <div className="px-8 py-8 text-center">
                 <h3 className="font-fairy text-3xl text-[#d88a9e] mb-4">
                   {title}
