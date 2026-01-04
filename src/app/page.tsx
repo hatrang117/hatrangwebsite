@@ -7,6 +7,7 @@ import FloatingElements from "@/components/FloatingElements";
 const profileSections = [
   {
     title: "About myself",
+    image: "hatrang.jpg"
     description: "Hi, I'm Le Ha Trang! A dreamer, creator, and lover of all things magical.",
   },
   {
