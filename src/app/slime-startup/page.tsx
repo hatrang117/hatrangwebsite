@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface MagicalFrameProps {
   title: string;
@@ -20,6 +20,13 @@ export default function MagicalFrame({
   className = "",
 }: MagicalFrameProps) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   const ratioClass =
     aspectRatio === "portrait"
@@ -70,33 +77,32 @@ export default function MagicalFrame({
       {/* MODAL */}
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center px-4"
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative mx-auto my-10 w-full max-w-4xl bg-[#fff6f9] rounded-[2.5rem]
-                       flex flex-col max-h-[85vh] overflow-hidden"
+            className="bg-[#fff6f9] rounded-[2.5rem] w-full max-w-3xl max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* IMAGE / VIDEO */}
-            <div className="w-full flex-shrink-0 max-h-[60vh] overflow-hidden">
+            {/* IMAGE */}
+            <div className={`w-full ${ratioClass}`}>
               {showVideo ? (
                 <video
                   src={videoSrc}
                   controls
-                  className="w-full h-full object-contain rounded-t-[2.5rem]"
+                  className="w-full h-full object-cover rounded-t-[2.5rem]"
                 />
               ) : (
                 <img
                   src={imageSrc}
                   alt={title}
-                  className="w-full h-full object-contain rounded-t-[2.5rem]"
+                  className="w-full h-full object-cover rounded-t-[2.5rem]"
                 />
               )}
             </div>
 
-            {/* SCROLLABLE CONTENT */}
-            <div className="flex-1 overflow-y-auto px-8 py-8 text-center">
+            {/* TEXT – SCROLL TẠI ĐÂY */}
+            <div className="px-8 py-10 text-center">
               <h3 className="font-fairy text-3xl text-[#d88a9e] mb-4">
                 {title}
               </h3>
