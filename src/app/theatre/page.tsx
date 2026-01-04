@@ -13,50 +13,21 @@ const theatreShows = [
   {
     title: "Practice Days",
     description:
-      "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it. These were the days where discipline quietly shaped passion.",
+      "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it.",
   },
   {
     title: "Between Beats & Breath",
     description:
-      "Where connection mattered more than perfection. Where silence, breath, and timing spoke louder than movement.",
-  },
-  {
-    title: "Backstage Moments",
-    description:
-      "The quiet excitement before the curtain rises. The whispers, the nervous smiles, the final deep breath.",
-  },
-  {
-    title: "Standing Ovation",
-    description:
-      "The most rewarding feeling. A shared moment between performers and audience where time stands still.",
-  },
-  {
-    title: "More Than Performance",
-    description:
-      "What stayed with me long after the music stopped. Lessons about presence, vulnerability, and courage.",
+      "Where connection mattered more than perfection.",
   },
 ];
 
 export default function Theatre() {
-  const [activeShow, setActiveShow] = useState<null | {
-    title: string;
-    description: string;
-  }>(null);
+  const [activeShow, setActiveShow] = useState<any>(null);
 
   return (
-    <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
+    <div className="min-h-screen bg-[#feeaf0] py-16 px-6 relative overflow-hidden">
       <FloatingElements />
-
-      {/* HEADER */}
-      <header className="mb-20 text-center relative z-10">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6">
-          Theatre Life
-        </h1>
-        <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
-          Between lights and quiet breaths, the stage becomes a place where I
-          listen, transform, and begin again
-        </p>
-      </header>
 
       {/* GRID */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
@@ -65,56 +36,54 @@ export default function Theatre() {
             key={index}
             title={show.title}
             description={show.description}
-            index={index}
             onClick={() => setActiveShow(show)}
           />
         ))}
       </div>
 
-      {/* MODAL */}
+      {/* 🔥 FIXED MODAL */}
       {activeShow && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4"
+          className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm"
           onClick={() => setActiveShow(null)}
         >
+          {/* SCROLL CONTAINER */}
           <div
-            className="bg-[#fff7fa] max-w-3xl w-full max-h-[90vh] rounded-[3rem] overflow-y-auto relative p-8 md:p-12"
+            className="w-full h-full overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* CLOSE */}
-            <button
-              onClick={() => setActiveShow(null)}
-              className="absolute top-6 right-6 text-[#9a7c85] text-2xl"
-            >
-              ✕
-            </button>
+            <div className="min-h-screen flex flex-col items-center py-20 px-6">
+              {/* IMAGE FULL */}
+              <div className="w-full max-w-5xl">
+                <div className="w-full aspect-[4/5] md:aspect-[3/4] bg-[#f2d6dd] rounded-3xl flex items-center justify-center">
+                  <span className="text-[#d88a9e] font-aesthetic">
+                    FULL IMAGE
+                  </span>
+                </div>
+              </div>
 
-            {/* IMAGE PLACEHOLDER */}
-            <div className="w-full aspect-square rounded-2xl bg-[#f2d6dd] mb-10 flex items-center justify-center">
-              <span className="font-aesthetic text-[#d88a9e]">
-                Full Image Display
-              </span>
+              {/* TEXT */}
+              <div className="max-w-3xl mt-12 text-center">
+                <h2 className="font-fairy text-5xl text-[#f5c1cf] mb-6">
+                  {activeShow.title}
+                </h2>
+
+                <p className="font-elegant text-xl text-[#fff] leading-relaxed">
+                  {activeShow.description}
+                </p>
+              </div>
+
+              {/* CLOSE */}
+              <button
+                onClick={() => setActiveShow(null)}
+                className="mt-16 text-[#f5c1cf] text-lg underline"
+              >
+                Close
+              </button>
             </div>
-
-            {/* TITLE */}
-            <h2 className="font-fairy text-4xl md:text-5xl text-[#d88a9e] mb-6 text-center">
-              {activeShow.title}
-            </h2>
-
-            {/* FULL CAPTION */}
-            <p className="font-elegant text-lg md:text-xl text-[#5c4a50] leading-relaxed whitespace-pre-line">
-              {activeShow.description}
-            </p>
           </div>
         </div>
       )}
-
-      {/* FOOTER */}
-      <footer className="mt-24 pb-12 text-center relative z-10">
-        <p className="font-aesthetic text-lg text-[#9a7c85]">
-          The curtain never falls in my heart
-        </p>
-      </footer>
     </div>
   );
 }
