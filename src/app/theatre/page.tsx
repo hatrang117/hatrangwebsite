@@ -35,7 +35,7 @@ const theatreShows = [
 export default function Theatre() {
   return (
     <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative bg-[#feeaf0]">
-      {/* Floating background – tự khóa overflow */}
+      {/* Floating background – KHÓA overflow CHỈ cho background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingElements />
       </div>
