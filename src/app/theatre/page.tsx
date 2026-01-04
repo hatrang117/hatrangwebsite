@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import MagicalFrame from "@/components/MagicalFrame";
 import FloatingElements from "@/components/FloatingElements";
 
@@ -7,38 +8,48 @@ const theatreShows = [
   {
     title: "First Big Stage",
     description:
-      "My debut performance in a large-scale show, stepping onto a major stage for the first time.",
+      "My debut performance in a large-scale show, stepping onto a major stage for the first time. The lights were blinding, my heart was racing, but the moment the music began, everything else faded away.",
   },
   {
     title: "Practice Days",
     description:
-      "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it.",
+      "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it. These were the days where discipline quietly shaped passion.",
   },
   {
     title: "Between Beats & Breath",
-    description: "Where connection mattered more than perfection.",
+    description:
+      "Where connection mattered more than perfection. Where silence, breath, and timing spoke louder than movement.",
   },
   {
     title: "Backstage Moments",
-    description: "The excitement before the curtain rises.",
+    description:
+      "The quiet excitement before the curtain rises. The whispers, the nervous smiles, the final deep breath.",
   },
   {
     title: "Standing Ovation",
-    description: "The most rewarding feeling.",
+    description:
+      "The most rewarding feeling. A shared moment between performers and audience where time stands still.",
   },
   {
     title: "More Than Performance",
-    description: "What stayed with me long after the music stopped.",
+    description:
+      "What stayed with me long after the music stopped. Lessons about presence, vulnerability, and courage.",
   },
 ];
 
 export default function Theatre() {
+  const [activeShow, setActiveShow] = useState<null | {
+    title: string;
+    description: string;
+  }>(null);
+
   return (
     <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
       <FloatingElements />
 
+      {/* HEADER */}
       <header className="mb-20 text-center relative z-10">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6 tracking-tight">
+        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6">
           Theatre Life
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
@@ -47,48 +58,60 @@ export default function Theatre() {
         </p>
       </header>
 
+      {/* GRID */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
         {theatreShows.map((show, index) => (
-          <div key={index} className="w-full">
-            <MagicalFrame
-              title={show.title}
-              description={show.description}
-              index={index}
-              aspectRatio="square"
-              className="shadow-lg hover:shadow-2xl transition-shadow duration-500"
-            />
-          </div>
+          <MagicalFrame
+            key={index}
+            title={show.title}
+            description={show.description}
+            index={index}
+            onClick={() => setActiveShow(show)}
+          />
         ))}
       </div>
 
-      <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
-        <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
-          <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-            The World is a Stage
-          </h2>
+      {/* MODAL */}
+      {activeShow && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4"
+          onClick={() => setActiveShow(null)}
+        >
+          <div
+            className="bg-[#fff7fa] max-w-3xl w-full max-h-[90vh] rounded-[3rem] overflow-y-auto relative p-8 md:p-12"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CLOSE */}
+            <button
+              onClick={() => setActiveShow(null)}
+              className="absolute top-6 right-6 text-[#9a7c85] text-2xl"
+            >
+              ✕
+            </button>
 
-          <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
-            &quot;Theatre is sweet, bold, and full of surprises. In every role, I
-            plant a seed of emotion and watch it bloom into a performance.&quot;
-          </p>
+            {/* IMAGE PLACEHOLDER */}
+            <div className="w-full aspect-square rounded-2xl bg-[#f2d6dd] mb-10 flex items-center justify-center">
+              <span className="font-aesthetic text-[#d88a9e]">
+                Full Image Display
+              </span>
+            </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Acting", "Singing", "Dancing", "Expression", "Magic"].map(
-              (item, i) => (
-                <span
-                  key={i}
-                  className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card"
-                >
-                  {item}
-                </span>
-              )
-            )}
+            {/* TITLE */}
+            <h2 className="font-fairy text-4xl md:text-5xl text-[#d88a9e] mb-6 text-center">
+              {activeShow.title}
+            </h2>
+
+            {/* FULL CAPTION */}
+            <p className="font-elegant text-lg md:text-xl text-[#5c4a50] leading-relaxed whitespace-pre-line">
+              {activeShow.description}
+            </p>
           </div>
         </div>
-      </section>
+      )}
 
+      {/* FOOTER */}
       <footer className="mt-24 pb-12 text-center relative z-10">
-        <p className="font-aesthetic text-lg text-[#9a7c85] mt-4">
+        <p className="font-aesthetic text-lg text-[#9a7c85]">
           The curtain never falls in my heart
         </p>
       </footer>
