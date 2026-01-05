@@ -6,7 +6,7 @@ import FloatingElements from "@/components/FloatingElements";
 import GalleryDialog from "@/components/GalleryDialog";
 
 const heroBook = {
-  title: "The Ultimate Reading Journey",
+  title: "A Lifelong Habit",
   description: "This photo captures a quiet moment of me lying down with a book, something that has been a constant part of my life since childhood. I have always loved reading and collecting books across many genres—from novels and short stories to comics and graphic works. Reading has never felt like a task to me; it is a hobby I turn to for relaxation, curiosity, and the freedom to explore ideas and topics that genuinely interest me.",
   mediaUrl: "/b11.jpg",
   mediaType: "image" 
@@ -14,14 +14,14 @@ const heroBook = {
 
 const favoriteBooks = [
   { 
-    title: "The Secret Garden", 
+    title: "A Shelf of Memories", 
     description: "This photo shows my personal bookshelf, which has been part of my room since childhood. When I was younger, it held the books I carefully collected one by one, forming my very first reading corner. As I grew older, my mother donated many of my childhood books to children in need and to younger kids in rural areas. Even so, my bookshelf has always remained full—preserving countless memories, along with the books I have cherished and grown up with over the years.",
     mediaUrl: "/b2.jpg",
     mediaType: "image" 
   },
   { 
     title: "Stormy Childhood", 
-    description: "This is one of my favorite books of all time: Tuổi thơ dữ dội by Phùng Quán. It is a powerful historical novel that vividly portrays the lives of young Vietnamese teenagers—around 12 to 14 years old—who joined the youth reconnaissance squad during the resistance against French colonial forces in Huế. Rather than a simple adventure story, it is a deeply moving and realistic depiction of courage, sacrifice, friendship, and love of country seen through the eyes of children whose “childhood” was shaped by war and hardship. The narrative brings into sharp focus the brutality of conflict alongside the extraordinary spirit of those who lived through it, reminding me of the immense sacrifices made by earlier generations and inspiring deep gratitude for the peace and happiness I enjoy today.",
+    description: "This is one of my favorite books of all time: Stormy Childhood by Phung Quan. It is a powerful historical novel that vividly portrays the lives of young Vietnamese teenagers—around 12 to 14 years old—who joined the youth reconnaissance squad during the resistance against French colonial forces in Huế. Rather than a simple adventure story, it is a deeply moving and realistic depiction of courage, sacrifice, friendship, and love of country seen through the eyes of children whose “childhood” was shaped by war and hardship. The narrative brings into sharp focus the brutality of conflict alongside the extraordinary spirit of those who lived through it, reminding me of the immense sacrifices made by earlier generations and inspiring deep gratitude for the peace and happiness I enjoy today.",
     mediaUrl: "/b3.jpg",
     mediaType: "image" 
   },
@@ -44,7 +44,7 @@ const favoriteBooks = [
     mediaType: "image" 
   },
   { 
-    title: "Wonderland", 
+    title: "Shaped By Stories", 
     description: "Books have always played a deeply important role in my life, especially throughout my childhood, shaping how I see the world and helping form the way I think. Even as I grow older and life becomes busier, I continue to make space for reading—holding onto it as a habit that grounds me, inspires me, and remains a lasting part of who I am.",
     mediaUrl: "/b7.jpg",
     mediaType: "image" 
@@ -119,7 +119,7 @@ export default function Books() {
       <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
         <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
           <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-            A Garden of Stories
+            A Garden Of Stories
           </h2>
           <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
             &quot;Books are like seeds planted in the mind. They grow into gardens 
