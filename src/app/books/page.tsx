@@ -127,7 +127,7 @@ export default function Books() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {["Classic Literature", "Poetry", "Fantasy", "Biography", "Art"].map((tag, i) => (
+            {["Bedtime Stories", "Childhood", "Wonder", "Emotion", "Belonging"].map((tag, i) => (
               <span key={i} className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card">
                 {tag}
               </span>
