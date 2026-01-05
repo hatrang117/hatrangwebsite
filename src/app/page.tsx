@@ -9,7 +9,7 @@ const profileSections = [
   {
     title: "About myself",
     description: "Hi, I'm Le Ha Trang! A dreamer, creator, and lover of all things magical.",
-    mediaUrl: "/hatrang.jpeg",
+    mediaUrl: "/hatrang.jpg",
     mediaType: "image",
   },
   {
