@@ -6,65 +6,65 @@ import FloatingElements from "@/components/FloatingElements";
 import GalleryDialog from "@/components/GalleryDialog";
 
 const heroProduct = {
-  title: "The Ultimate Slime Experience",
-  description: "Our signature collection that started it all. A masterpiece of texture, color, and scent, designed to bring joy and relaxation to your world.",
-  mediaUrl: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg",
+  title: "Slime World",
+  description: "This is a small local slime shop that I co-founded and currently co-lead with two friends. What began as a fun, lighthearted project to bring joy to our fellow students - and earn a bit of extra income - soon became much more. Through running the shop, I learned valuable lessons in business strategy, marketing, and teamwork beyond what any classroom could teach. Our signature products quickly stood out for their creativity and appeal, especially through our marketing initiatives.",
+  mediaUrl: "/1slime.jpg",
   mediaType: "image" 
 };
 
 const slimeProducts = [
   { 
     title: "CEO & Founder", 
-    description: "Leading with creativity and passion. My vision is to bring magic to every touch and create sensory wonders for everyone.",
-    mediaUrl: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg",
+    description: "Having loved playing with slime since childhood and being deeply passionate about entrepreneurship, I’ve always dreamed of seeing our slime shop grow stronger and more successful - a small brand that brings joy, creativity, and color to everyone who discovers it.",
+    mediaUrl: "/2slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Cloud Slime", 
-    description: "Soft, fluffy, and dreamy like cotton candy clouds. A sensory experience that transports you to a world of fluff and sweetness.",
-    mediaUrl: "https://images.pexels.com/photos/4061662/pexels-photo-4061662.jpeg",
+    title: "Being creative with Slime", 
+    description: "We also created creative customer appreciation initiatives for our slime shop. For example, we offered a 10% discount to customers who purchased and shared feedback on Instagram, special discounts on October 20th for female customers, and even opportunities for customers to design their own slime - choosing their favorite colors, charms, and textures. These programs allowed us to engage directly with our audience while making the slime experience more personal and fun.",
+    mediaUrl: "/3 slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Strawberry Special", 
-    description: "Our signature berry-themed creation. Scented with fresh strawberries and filled with magical glitters.",
-    mediaUrl: "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg",
+    title: "SLIME: LOVELY MEOMEO", 
+    description: "The Sweet Basic Slime, made for loving hearts 💗 Perfect for gifting to someone special or pampering yourself on days when you need a little “self-love.” Soft, stretchy, and carrying a gentle pink hue just like its name. You can also shape it into hearts or bows as you like using the included clay!",
+    mediaUrl: "/4slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Galaxy Swirl", 
-    description: "Swirls of cosmic colors and sparkle. A mesmerizing journey through the stars, right in the palm of your hand.",
-    mediaUrl: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg",
+    title: "SLIME: PANCAT", 
+    description: "Inspired by soft, fluffy pancakes, Pancat is our Cloud Cream Slime line - light and airy like a cloud, melting at your touch~ You can shape your very own pancake using the included clay. Its gentle sweet scent and super smooth texture make it perfect for relaxing after a long, tiring day!",
+    mediaUrl: "/5slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Ocean Breeze", 
-    description: "Cool, crisp, and refreshing. Like a day at the beach, this slime brings the serenity of the waves to your fingertips.",
-    mediaUrl: "https://images.pexels.com/photos/1037994/pexels-photo-1037994.jpeg",
+    title: "SLIME: FURROSTIE", 
+    description: "Inspired by the cool Frostie drink, Furrostie is our Icy Slime line, with soft, chilly icy slime that feels amazing to touch ☁️ Its soothing sea-blue color brings a fresh, relaxing vibe!,
+    mediaUrl: "/6slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Lavender Dream", 
-    description: "Calming scent and soothing texture. Perfect for unwinding after a long day in the garden of imagination.",
-    mediaUrl: "https://images.pexels.com/photos/1037996/pexels-photo-1037996.jpeg",
+    title: "SLIME: MEOWCHA", 
+    description: "Inspired by matcha - a drink popular among young people today - Meowcha is our Basic Slime line, coming with foam and clay, giving a soft, relaxing, and pleasant feel.",
+    mediaUrl: "/7slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Minty Fresh", 
-    description: "A burst of cool mint energy. Invigorating and satisfying, this slime is as refreshing as a morning dew.",
-    mediaUrl: "https://images.pexels.com/photos/1037991/pexels-photo-1037991.jpeg",
+    title: "Instagram", 
+    description: "This is our Instagram page - our main sales channel. We aim to build this account with visually appealing posts and maintain steady engagement with our audience.",
+    mediaUrl: "/8slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Gold Leaf", 
-    description: "Elegant and luxurious. Shimmering with gold flakes, this slime is a treasure for the senses.",
-    mediaUrl: "https://images.pexels.com/photos/1037997/pexels-photo-1037997.jpeg",
+    title: "Slime combo", 
+    description: "FURROSTIE, MEOWCHA, AND CHOCOLATE - A SPECIAL GIFT AND UNIQUE KIND OF SLIME",
+    mediaUrl: "/9slime.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Midnight Sparkle", 
-    description: "Deep, mysterious, and full of light. A glittery masterpiece that shines like the night sky.",
-    mediaUrl: "https://images.pexels.com/photos/1037998/pexels-photo-1037998.jpeg",
+    title: "PLAY SLIME, AND SMILE", 
+    description: "Pop, squish, and mix these delightful jelly cubes. A textured adventure in every container!",
+    mediaUrl: "/10slime.jpg",
     mediaType: "image" 
   },
 ];
