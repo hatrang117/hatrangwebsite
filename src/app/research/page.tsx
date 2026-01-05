@@ -92,7 +92,7 @@ Another factor is the lack of female role models in STEM. When young women rarel
 Encouraging more women to join and remain in STEM is not only a matter of fairness but also of practical necessity. Studies by McKinsey & Company have shown that companies with greater gender diversity are more innovative and financially successful. By involving women in solving scientific and technological challenges, societies can benefit from diverse perspectives, which often lead to more creative and inclusive solutions.
 
 In conclusion, increasing women’s participation in STEM requires a multifaceted approach. Governments and institutions should promote equal access to education, provide scholarships for female students in STEM, and ensure inclusive workplace policies. At the same time, changing cultural perceptions and highlighting female role models are essential to inspiring the next generation. Greater involvement of women in STEM will not only promote gender equality but also drive global progress.`
-",
+,
     mediaUrl: "/re3.png",
     mediaType: "image" 
   },
