@@ -8,7 +8,7 @@ import GalleryDialog from "@/components/GalleryDialog";
 const heroBook = {
   title: "The Ultimate Reading Journey",
   description: "This photo captures a quiet moment of me lying down with a book, something that has been a constant part of my life since childhood. I have always loved reading and collecting books across many genres—from novels and short stories to comics and graphic works. Reading has never felt like a task to me; it is a hobby I turn to for relaxation, curiosity, and the freedom to explore ideas and topics that genuinely interest me.",
-  mediaUrl: "/b1.jpg",
+  mediaUrl: "/b11.jpg",
   mediaType: "image" 
 };
 
