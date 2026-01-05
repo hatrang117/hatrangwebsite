@@ -70,7 +70,7 @@ export default function Research() {
           Research & Journals
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
-          Investigating the wonders of the enchanted world
+          Exploring ideas, questions, and perspectives through research and journals
         </p>
       </header>
 
@@ -122,7 +122,7 @@ export default function Research() {
 
       <footer className="mt-24 pb-12 text-center relative z-10">
         <p className="font-aesthetic text-lg text-[#9a7c85] mt-4">
-          Curiosity is the sunlight of the garden
+          Curiosity is where every inquiry begins
         </p>
       </footer>
     </div>
