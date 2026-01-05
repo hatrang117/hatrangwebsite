@@ -40,13 +40,13 @@ const slimeProducts = [
   { 
     title: "SLIME: FURROSTIE", 
     description: "Inspired by the cool Frostie drink, Furrostie is our Icy Slime line, with soft, chilly icy slime that feels amazing to touch ☁️ Its soothing sea-blue color brings a fresh, relaxing vibe!",
-    mediaUrl: "/6slime.jpg",
+    mediaUrl: "/6slime.JPG",
     mediaType: "image" 
   },
   { 
     title: "SLIME: MEOWCHA", 
     description: "Inspired by matcha - a drink popular among young people today - Meowcha is our Basic Slime line, coming with foam and clay, giving a soft, relaxing, and pleasant feel.",
-    mediaUrl: "/7slime.jpg",
+    mediaUrl: "/7slime.JPG",
     mediaType: "image" 
   },
   { 
@@ -58,13 +58,13 @@ const slimeProducts = [
   { 
     title: "Slime combo", 
     description: "FURROSTIE, MEOWCHA, AND CHOCOLATE - A SPECIAL GIFT AND UNIQUE KIND OF SLIME",
-    mediaUrl: "/9slime.jpg",
+    mediaUrl: "/9slime.JPG",
     mediaType: "image" 
   },
   { 
     title: "PLAY SLIME, AND SMILE", 
     description: "Pop, squish, and mix these delightful jelly cubes. A textured adventure in every container!",
-    mediaUrl: "/10slime.jpg",
+    mediaUrl: "/10slime.JPG",
     mediaType: "image" 
   },
 ];
