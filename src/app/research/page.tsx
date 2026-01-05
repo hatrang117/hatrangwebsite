@@ -91,7 +91,7 @@ export default function Research() {
           />
         </div>
 
-        {/* 2x2 Grid */}
+        {/* 4x4 grid */}
         <div className="grid grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
           {researchPapers.map((paper, index) => (
             <div key={index} className="w-full">
