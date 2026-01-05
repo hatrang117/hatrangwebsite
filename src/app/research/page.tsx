@@ -8,7 +8,7 @@ import GalleryDialog from "@/components/GalleryDialog";
 const heroResearch = {
   title: `Startup intention of university students in the economic sector in Hanoi using structural equation modeling`,
   description: "This research examines the startup intentions of university students in the economic sector in Hanoi, using Structural Equation Modeling (SEM) as the primary analytical method. The study explores how key factors—such as entrepreneurial attitude, perceived behavioral control, and social influence—interact to shape students’ intentions to start a business. By applying SEM, the research provides a structured and data-driven understanding of the relationships between these variables, offering insights into the entrepreneurial mindset of young people in an urban academic context.",
-  mediaUrl: "/REE.png",
+  mediaUrl: "/RE.png",
   mediaType: "image" 
 };
 
