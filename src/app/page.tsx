@@ -13,29 +13,31 @@ const profileSections = [
   },
   {
     title: "My beloved ones",
-    image: "/hatrang.jpg",
+    image: "/loved-ones.jpg",
     description:
-      "I hold relationships close to my heart. Family and friends are my grounding force—the people who shape who I am and make life feel fuller. I treasure shared meals, long conversations, and the quiet comfort of simply being together.",
+      "I hold relationships close to my heart. Family and friends are my grounding force.",
   },
   {
     title: "My Passions",
-    image: "/hatrang.jpg",
+    image: "/passions.jpg",
     description:
-      "I find joy in simple, creative moments—playing the piano, baking, reading books, and running my small slime shop.",
+      "I find joy in simple, creative moments—music, baking, books, and slime.",
   },
   {
     title: "Once Upon a Time",
-    image: "/hatrang.jpg",
-    description: `Where my story began—soft memories, curious eyes, and endless wonder. Wrapped in love and gentle care, I grew up dreaming freely.`,
+    image: "/childhood.jpg",
+    description: `Where It All Began
+
+Where my story began—soft memories, curious eyes, and endless wonder.`,
   },
 ];
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<
-    (typeof profileSections)[0] & { index: number } | null
+    (typeof profileSections)[0] | null
   >(null);
 
-  // 🔒 Lock scroll when modal open
+  // Lock scroll when modal open
   useEffect(() => {
     document.body.style.overflow = activeSection ? "hidden" : "";
     return () => {
@@ -49,7 +51,7 @@ export default function Home() {
 
       {/* HEADER */}
       <header className="text-center mb-20 relative z-10">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#b86b7e] mb-6">
+        <h1 className="text-6xl md:text-8xl text-[#b86b7e] mb-6">
           Le Ha Trang
         </h1>
         <p className="text-2xl text-[#7a5a65]">
@@ -62,12 +64,11 @@ export default function Home() {
         {profileSections.map((section, index) => (
           <div
             key={index}
-            onClick={() => setActiveSection({ ...section, index })}
+            onClick={() => setActiveSection(section)}
             className="cursor-pointer"
           >
             <MagicalFrame
               title={section.title}
-              description={section.description}
               image={section.image}
             />
           </div>
@@ -84,7 +85,7 @@ export default function Home() {
             className="min-h-screen flex justify-center py-16 px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-white rounded-[3rem] max-w-3xl w-full p-10 relative">
+            <div className="bg-white rounded-[32px] max-w-3xl w-full p-10 relative">
               {/* CLOSE */}
               <button
                 onClick={() => setActiveSection(null)}
@@ -94,11 +95,11 @@ export default function Home() {
               </button>
 
               {/* IMAGE */}
-              <div className="aspect-square mb-10">
+              <div className="w-full h-[420px] overflow-hidden rounded-[24px] mb-10 bg-gray-200">
                 <img
                   src={activeSection.image}
                   alt={activeSection.title}
-                  className="w-full h-full object-cover rounded-[2rem]"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
