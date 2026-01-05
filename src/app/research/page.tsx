@@ -85,8 +85,8 @@ export default function Research() {
             index={0}
             aspectRatio="video"
             className="shadow-2xl"
-            titleClassName="text-base md:text-xl"
-            descriptionClassName="text-xs md:text-sm"
+            titleClassName="text-sm md:text-lg"
+            descriptionClassName="text-[11px] md:text-xs"
             onClick={() => openGallery(0)}
           />
         </div>
@@ -103,8 +103,8 @@ export default function Research() {
                 index={index + 1}
                 aspectRatio="square"
                 className="shadow-xl"
-                titleClassName="text-xs sm:text-sm md:text-base lg:text-lg"
-                descriptionClassName="text-[10px] sm:text-xs leading-tight"
+               titleClassName="text-[11px] sm:text-xs md:text-sm lg:text-base"
+               descriptionClassName="text-[9px] sm:text-[10px] leading-snug"
                 contentClassName="p-3 sm:p-4"
                 onClick={() => openGallery(index + 1)}
               />
