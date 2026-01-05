@@ -39,7 +39,7 @@ const pianoContent = [
   { 
     title: "Melody in Motion", 
     description: "This video marks my first performance in a large auditorium, with rows of seats and a full stage set for the piano. I was incredibly nervous leading up to the performance, spending the entire night before preparing carefully with my mother. The recital went exactly as I had hoped, and the experience became a memorable milestone—one that taught me the value of preparation, support, and stepping confidently into unfamiliar spaces.",
-    mediaUrl: "https://assets.mixkit.co/videos/preview/mixkit-playing-the-piano-in-close-up-4447-large.mp4",
+    mediaUrl: "/vid (1).mp4",
     mediaType: "video" 
   },
 ];
