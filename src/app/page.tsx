@@ -122,7 +122,7 @@ export default function Home() {
           </div>
           
           <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
-            The Magic of Being
+            A Gentle Corner Of My World
           </h2>
           <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-relaxed mb-10 italic">
             &quot;In this garden of dreams, every petal tells a story, every breeze carries a melody, 
