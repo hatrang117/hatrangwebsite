@@ -10,37 +10,37 @@ const theatreShows = [
     title: "Leading Role", 
     description: "My debut as a lead performer on stage. A moment where the spotlight met my dreams and the world stood still.",
     mediaUrl: "https://images.pexels.com/photos/236102/pexels-photo-236102.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Musical Magic", 
     description: "Singing my heart out in the spotlight. Every note carries the weight of a thousand emotions, shared with an audience.",
     mediaUrl: "https://images.pexels.com/photos/45258/ballet-production-performance-don-quixote-45258.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Dance & Drama", 
     description: "Where movement tells the story. The stage becomes a canvas where every gesture is a stroke of emotion.",
     mediaUrl: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Backstage Moments", 
     description: "The excitement before the curtain rises. The smell of greasepaint, the hum of anticipation, and the bond with the cast.",
     mediaUrl: "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Encore Applause", 
     description: "The final bow after a successful show. The sound of clapping hands is like music to my ears, a reward for the hard work.",
     mediaUrl: "https://images.pexels.com/photos/236102/pexels-photo-236102.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Rehearsal Flow", 
     description: "Perfecting every move and line. The journey to the stage is filled with dedication, laughter, and a passion for the craft.",
     mediaUrl: "https://images.pexels.com/photos/45258/ballet-production-performance-don-quixote-45258.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
 ];
 
