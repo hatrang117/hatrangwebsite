@@ -9,13 +9,13 @@ const theatreShows = [
   { 
     title: "The Very First Time", 
     description: "This photo captures me performing on a large stage in front of a full audience for the first time. After a long period of dedicated rehearsals, stepping into such a vast space was both nerve-racking and exhilarating. In that moment, I felt fully immersed in the music and the story, no longer just performing a role but truly becoming part of the production.",
-    mediaUrl: "/t1.jpg",
+    mediaUrl: "/ep1.jpg",
     mediaType: "image" 
   },
   { 
     title: "Musical Magic", 
     description: "This image captures another moment from the same production, highlighting a different performance within the show. By this point, the stage no longer felt intimidating—it felt alive. Each movement, note, and line carried intention, allowing me to dive deeper into the character and the narrative. This performance marked a shift from simply executing choreography or music to fully inhabiting the story and sharing its emotional weight with the audience.",
-    mediaUrl: "/t2.jpg",
+    mediaUrl: "/ep2.jpg",
     mediaType: "image" 
   },
   { 
