@@ -1,155 +1,146 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState } from "react";
 import MagicalFrame from "@/components/MagicalFrame";
 import FloatingElements from "@/components/FloatingElements";
+import GalleryDialog from "@/components/GalleryDialog";
+
+const heroBook = {
+  title: "The Ultimate Reading Journey",
+  description: "A collection of stories that have shaped my imagination and filled my heart with wonder. From classic literature to modern masterpieces.",
+  mediaUrl: "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg",
+  mediaType: "image" 
+};
 
 const favoriteBooks = [
-  {
-    title: "The Secret Garden",
-    description:
-      "A story of healing and magic in a hidden place. Frances Hodgson Burnett's masterpiece that perfectly encapsulates the magic of nature and the human spirit's ability to bloom.",
+  { 
+    title: "The Secret Garden", 
+    description: "Frances Hodgson Burnett's masterpiece that perfectly encapsulates the magic of nature and the human spirit's ability to bloom.",
+    mediaUrl: "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg",
+    mediaType: "image" 
   },
-  { title: "Little Women", description: "The beautiful journey of sisters finding their way." },
-  { title: "Pride & Prejudice", description: "Witty, romantic, and timelessly elegant." },
-  { title: "Anne of Green Gables", description: "Finding wonder in every corner of the world." },
-  { title: "Alice in Wonderland", description: "A curious adventure through a magical world." },
-  { title: "Stardust", description: "A fairy tale that captures the essence of dreams." },
-  { title: "Jane Eyre", description: "A tale of strength, love, and independence." },
+  { 
+    title: "Little Women", 
+    description: "The beautiful journey of sisters finding their way. A tale of strength, love, and independence in a world full of possibilities.",
+    mediaUrl: "https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg",
+    mediaType: "image" 
+  },
+  { 
+    title: "Pride & Prejudice", 
+    description: "Witty, romantic, and timelessly elegant. Finding wonder in every corner of the world through the lens of classic storytelling.",
+    mediaUrl: "https://images.pexels.com/photos/415071/pexels-photo-415071.jpeg",
+    mediaType: "image" 
+  },
+  { 
+    title: "Anne of Green Gables", 
+    description: "Finding wonder in every corner of the world. A curious adventure through a magical world of imagination and beauty.",
+    mediaUrl: "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg",
+    mediaType: "image" 
+  },
+  { 
+    title: "The Great Gatsby", 
+    description: "A story of dreams, love, and the pursuit of happiness. A timeless classic that explores the human condition with grace.",
+    mediaUrl: "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg",
+    mediaType: "image" 
+  },
+  { 
+    title: "Wonder", 
+    description: "A beautiful reminder of the power of kindness and the strength of the human spirit. A story that touches every heart.",
+    mediaUrl: "https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg",
+    mediaType: "image" 
+  },
 ];
 
+const allBooks = [heroBook, ...favoriteBooks];
+
 export default function Books() {
-  const [activeBook, setActiveBook] = useState<null | {
-    title: string;
-    description: string;
-    index: number;
-    aspectRatio: "square" | "video";
-  }>(null);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Lock scroll + ESC close
-  useEffect(() => {
-    if (!activeBook) return;
-
-    document.body.style.overflow = "hidden";
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveBook(null);
-    };
-
-    window.addEventListener("keydown", onKey);
-
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [activeBook]);
+  const openGallery = (index: number) => {
+    setActiveIndex(index);
+    setIsGalleryOpen(true);
+  };
 
   return (
-    <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 bg-[#feeaf0] relative">
+    <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
       <FloatingElements />
 
-      {/* HEADER */}
-      <header className="mb-20 text-center">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] mb-6">
-          Books
+      <header className="mb-20 text-center relative z-10">
+        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6 tracking-tight">
+          Books I Love
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
           Pages of magic gathered in my reading garden
         </p>
       </header>
 
-      {/* CONTENT */}
-      <div className="max-w-7xl mx-auto flex flex-col gap-16">
-        <button
-          onClick={() =>
-            setActiveBook({
-              title: favoriteBooks[0].title,
-              description: favoriteBooks[0].description,
-              index: 0,
-              aspectRatio: "video",
-            })
-          }
-          className="w-full max-w-5xl mx-auto"
-        >
+      <div className="max-w-6xl mx-auto relative z-10 space-y-16">
+        {/* Hero Image */}
+        <div className="w-full max-w-4xl mx-auto">
           <MagicalFrame
-            title="Featured Treasure: The Secret Garden"
-            description="Frances Hodgson Burnett's masterpiece that perfectly encapsulates the magic of nature and the human spirit's ability to bloom."
+            title={heroBook.title}
+            description={heroBook.description}
+            mediaUrl={heroBook.mediaUrl}
+            mediaType={heroBook.mediaType}
             index={0}
             aspectRatio="video"
+            className="shadow-2xl"
+            onClick={() => openGallery(0)}
           />
-        </button>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {favoriteBooks.slice(1).map((book, index) => (
-            <button
-              key={index}
-              onClick={() =>
-                setActiveBook({
-                  title: book.title,
-                  description: book.description,
-                  index: index + 1,
-                  aspectRatio: "square",
-                })
-              }
-            >
+        {/* 3x2 Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
+          {favoriteBooks.map((book, index) => (
+            <div key={index} className="w-full">
               <MagicalFrame
                 title={book.title}
                 description={book.description}
+                mediaUrl={book.mediaUrl}
+                mediaType={book.mediaType}
                 index={index + 1}
                 aspectRatio="square"
+                className="shadow-lg"
+                onClick={() => openGallery(index + 1)}
               />
-            </button>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* ===== MODAL PORTAL ===== */}
-      {mounted && activeBook &&
-        createPortal(
-          <>
-            {/* Overlay */}
-            <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-[9999]" />
+      <GalleryDialog 
+        isOpen={isGalleryOpen} 
+        onOpenChange={setIsGalleryOpen} 
+        items={allBooks} 
+        activeIndex={activeIndex} 
+      />
 
-            {/* ❌ FIXED CLOSE */}
-            <button
-              onClick={() => setActiveBook(null)}
-              className="fixed top-6 right-6 z-[10000] text-white text-5xl hover:scale-110 transition"
-              aria-label="Close"
-            >
-              ×
-            </button>
+      <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
+        <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
+          <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
+            A Garden of Stories
+          </h2>
+          <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
+            &quot;Books are like seeds planted in the mind. They grow into gardens 
+            of imagination where we can wander whenever we please.&quot;
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            {["Classic Literature", "Poetry", "Fantasy", "Biography", "Art"].map((tag, i) => (
+              <span key={i} className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* MODAL CONTENT */}
-            <div className="fixed inset-0 z-[9998] flex justify-center items-center px-4">
-              <div className="bg-[#fff1f5] rounded-[2.5rem] max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8">
-                <div className="mb-8 pointer-events-none">
-                  <MagicalFrame
-                    title={activeBook.title}
-                    description=""
-                    index={activeBook.index}
-                    aspectRatio={activeBook.aspectRatio}
-                  />
-                </div>
-
-                <h2 className="font-fairy text-4xl text-center text-[#d88a9e] mb-4">
-                  {activeBook.title}
-                </h2>
-
-                <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] text-center leading-relaxed">
-                  {activeBook.description}
-                </p>
-              </div>
-            </div>
-          </>,
-          document.body
-        )}
+      <footer className="mt-24 pb-12 text-center relative z-10">
+        <p className="font-aesthetic text-lg text-[#9a7c85] mt-4">
+          Every page turned is a new bloom in the heart
+        </p>
+      </footer>
     </div>
   );
 }
