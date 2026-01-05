@@ -37,7 +37,6 @@ export default function Home() {
     (typeof profileSections)[0] | null
   >(null);
 
-  // Lock scroll when modal open
   useEffect(() => {
     document.body.style.overflow = activeSection ? "hidden" : "";
     return () => {
@@ -86,7 +85,6 @@ export default function Home() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="bg-white rounded-[32px] max-w-3xl w-full p-10 relative">
-              {/* CLOSE */}
               <button
                 onClick={() => setActiveSection(null)}
                 className="absolute top-6 right-6 text-3xl text-gray-500"
@@ -94,8 +92,7 @@ export default function Home() {
                 ×
               </button>
 
-              {/* IMAGE */}
-              <div className="w-full h-[420px] overflow-hidden rounded-[24px] mb-10 bg-gray-200">
+              <div className="w-full h-[420px] overflow-hidden rounded-[24px] mb-10 relative bg-gray-200">
                 <img
                   src={activeSection.image}
                   alt={activeSection.title}
@@ -103,7 +100,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* TEXT */}
               <h2 className="text-4xl text-[#b86b7e] mb-6 text-center">
                 {activeSection.title}
               </h2>
