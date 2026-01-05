@@ -15,38 +15,38 @@ type PhotoItem = {
 const photos: PhotoItem[] = [
   { 
     title: "Together Forever", 
-    description: "Precious moments with my beloved grandma. Every wrinkle on her face tells a story of love and resilience.",
-    mediaUrl: "https://images.pexels.com/photos/3768114/pexels-photo-3768114.jpeg",
+    description: "My grandmother is a woman deeply devoted to learning and driven by an endless curiosity about the world. Ever since I was a child, watching her immersed in books quietly taught me that knowledge is something to be cherished and pursued with discipline. She is not only my grandmother, but also my first and most rigorous teacher, guiding and accompanying me throughout my entire learning journey. Her belief that one must study seriously and strive to do well has profoundly shaped my attitude toward learning and continues to influence who I am today.",
+    mediaUrl: "/bangoai.jpg",
     mediaType: "image"
   },
   { 
     title: "Sweet Memories", 
-    description: "Every moment spent together is a treasure. Her warmth fills my heart with joy and peace.",
-    mediaUrl: "https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg",
+    description: "Throughout my childhood, my grandmother was not only a guide but also my closest companion. This moment of her lifting me high in the air, laughing with pure joy, captures the warmth and playfulness she brought into my early years. Her home was a place where I was free to run, imagine, and explore the world without limits. Through her laughter, games, and gentle presence, she filled my childhood with happiness, curiosity, and memories that continue to shape the way I experience joy and wonder today.",
+    mediaUrl: "/babe.jpg",
     mediaType: "image"
   },
   { 
     title: "Grandma's Love", 
-    description: "Her warmth fills my heart with joy. She is the anchor in my life, guiding me with her wisdom.",
-    mediaUrl: "https://images.pexels.com/photos/2050994/pexels-photo-2050994.jpeg",
+    description: "This photo captures one of our early outings together, when my grandmother took me out and we sat at a small café by the lake. Over time, going out together gradually became our ritual. From childhood to now, my image of Hanoi has always been inseparable from her presence. She loved taking me around the city—trying new foods, wandering familiar streets, and picking up little things along the way. Every summer, I would eagerly look forward to those days, knowing they meant more time spent exploring Hanoi and life itself by her side.",
+    mediaUrl: "/minitoivaba.jpg",
     mediaType: "image"
   },
   { 
     title: "Our Adventures", 
-    description: "Exploring the world, hand in hand. From the simplest walk in the park to the grandest dreams, she's always there.",
-    mediaUrl: "https://images.pexels.com/photos/3791664/pexels-photo-3791664.jpeg",
+    description: "This photo was taken during my middle school years, on a family trip. My grandmother has always had a deep love for traveling—and I inherited that from her. For us, summer meant moving from place to place together, discovering new environments, cultures, and perspectives. Those trips were not only about exploration, but also about rest and renewal after a long academic year, turning travel into a shared way for us to learn, unwind, and connect.",
+    mediaUrl: "/dulich.jpg",
     mediaType: "image"
   },
   { 
-    title: "Kitchen Magic", 
-    description: "The secret ingredient is always love. Learning the recipes that have been passed down through generations.",
-    mediaUrl: "https://images.pexels.com/photos/3768114/pexels-photo-3768114.jpeg",
+    title: "Memorable Trip", 
+    description: "This photo was taken during our family trip to China, marking the first time I ever traveled abroad—with my grandmother by my side. Her presence has accompanied me through many important milestones in my life, both big and small. In each of these moments, she has played a quiet yet essential role, offering support, encouragement, and a sense of continuity that has grounded me as I stepped into new experiences and wider worlds.",
+    mediaUrl: "/china.jpg",
     mediaType: "image"
   },
   { 
     title: "Story Time", 
-    description: "Listening to the tales of old. Every story is a window into a world I never knew, told with such grace.",
-    mediaUrl: "https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg",
+    description: "As her first grandchild, I was cared for by my grandmother from my earliest days and grew up spending more time with her than any of my siblings or cousins. Because of that, we share a bond shaped by years of closeness and countless memories. Even though she never says it aloud, I know there is a special kind of love between us—one built through everyday moments, shared experiences, and a deep, unspoken understanding that makes our relationship uniquely close.",
+    mediaUrl: "/bavatoitube.jpg",
     mediaType: "image"
   },
 ];
