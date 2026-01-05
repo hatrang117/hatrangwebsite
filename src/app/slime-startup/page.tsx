@@ -39,7 +39,7 @@ const slimeProducts = [
   },
   { 
     title: "SLIME: FURROSTIE", 
-    description: "Inspired by the cool Frostie drink, Furrostie is our Icy Slime line, with soft, chilly icy slime that feels amazing to touch ☁️ Its soothing sea-blue color brings a fresh, relaxing vibe!,
+    description: "Inspired by the cool Frostie drink, Furrostie is our Icy Slime line, with soft, chilly icy slime that feels amazing to touch ☁️ Its soothing sea-blue color brings a fresh, relaxing vibe!",
     mediaUrl: "/6slime.jpg",
     mediaType: "image" 
   },
