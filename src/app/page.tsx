@@ -10,25 +10,25 @@ const profileSections = [
     title: "Welcome to My World",
     description: "Hi, I'm Le Ha Trang! A dreamer, creator, and lover of all things magical.",
     mediaUrl: "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg",
-    mediaType: "image" as const,
+    mediaType: "image",
   },
   {
     title: "About Me",
     description: "I'm passionate about music, theatre, books, and building creative businesses.",
     mediaUrl: "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg",
-    mediaType: "image" as const,
+    mediaType: "image",
   },
   {
     title: "My Passions",
     description: "From playing piano to running a slime startup, I embrace every creative adventure.",
     mediaUrl: "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg",
-    mediaType: "image" as const,
+    mediaType: "image",
   },
   {
     title: "Dream & Create",
     description: "I believe in the magic of following your dreams. Join me on this journey!",
     mediaUrl: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg",
-    mediaType: "image" as const,
+    mediaType: "image",
   },
 ];
 
