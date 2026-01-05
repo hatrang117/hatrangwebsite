@@ -7,40 +7,40 @@ import GalleryDialog from "@/components/GalleryDialog";
 
 const pianoContent = [
   { 
-    title: "Classical Soul", 
+    title: "Where It All Began", 
     description: "From a young age, I developed a deep passion for the piano and began formal lessons in kindergarten with the support of my parents. Although I no longer pursue it at an advanced level, piano has remained a meaningful hobby—one that continues to bring me calm, focus, and a quiet sense of joy.",
     mediaUrl: "/tapluyen.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Practice Garden", 
+    title: "First Recitals", 
     description: "This photo was taken with my mother right after the performance. She was overjoyed and deeply proud, holding me close with the brightest smile. In that moment, her happiness became mine as well, turning the performance into more than an achievement—it became a shared memory of encouragement, love, and unwavering support.",
-    mediaUrl: "/voimom.jpg",
+    mediaUrl: "/luyentap.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Performance Night", 
-    description: "This photo captures one of the small recital performances at the end of a course. Although the audience was modest—mostly parents of the students, including my own—I found the experience genuinely joyful and deeply rewarding. Being able to share what I had practiced, even in an intimate setting, taught me confidence and reminded me that performance is not about scale, but about expression and connection.",
-    mediaUrl: "/bieudien.jpg",
-    mediaType: "image" 
-  },
-  { 
-    title: "Musical Dreams", 
+    title: "Growing Together", 
     description: "This photo was taken with my piano classmates after we finished our recital. Each of us was holding a bouquet of flowers, smiling with pure excitement and pride. It was a deeply memorable moment that captured not only the joy of performing, but also the sense of friendship and shared effort we built in piano class. Those lessons were filled with laughter, encouragement, and some of my happiest memories of learning alongside others.",
     mediaUrl: "/loptapthe.jpg",
     mediaType: "image" 
   },
   { 
-    title: "The Golden Hour", 
+    title: "Music in Motion", 
     description: "This photo captures me at the piano in front of an audience, fully immersed in the performance. In that moment, everything else faded away—the nerves, the surroundings—leaving only the music and my connection with the listeners. Playing in front of others taught me how to stay present under pressure and transform emotion into expression, making the piano not just an instrument, but a bridge between myself and the audience.",
-    mediaUrl: "/luyentap.jpg",
+    mediaUrl: "/bieudien.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Melody in Motion", 
+    title: "A Bigger Stage", 
     description: "This video marks my first performance in a large auditorium, with rows of seats and a full stage set for the piano. I was incredibly nervous leading up to the performance, spending the entire night before preparing carefully with my mother. The recital went exactly as I had hoped, and the experience became a memorable milestone—one that taught me the value of preparation, support, and stepping confidently into unfamiliar spaces.",
     mediaUrl: "/vid (1).mp4",
     mediaType: "video" 
+  },
+  { 
+    title: "Shared Pride", 
+    description: "This photo was taken with my mother right after the performance. She was overjoyed and deeply proud, holding me close with the brightest smile. In that moment, her happiness became mine as well, turning the performance into more than an achievement—it became a shared memory of encouragement, love, and unwavering support.",
+    mediaUrl: "/voimom.jpg",
+    mediaType: "image" 
   },
 ];
 
