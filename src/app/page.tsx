@@ -13,19 +13,19 @@ const profileSections = [
   },
   {
     title: "My beloved ones",
-    image: "/loved-ones.jpg",
+    image: "/hatrang.jpg",
     description:
       "I hold relationships close to my heart. Family and friends are my grounding force.",
   },
   {
     title: "My Passions",
-    image: "/passions.jpg",
+    image: "/hatrang.jpg",
     description:
       "I find joy in simple, creative moments—music, baking, books, and slime.",
   },
   {
     title: "Once Upon a Time",
-    image: "/childhood.jpg",
+    image: "/hatrang.jpg",
     description: `Where It All Began
 
 Where my story began—soft memories, curious eyes, and endless wonder.`,
