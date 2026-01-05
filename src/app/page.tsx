@@ -26,9 +26,7 @@ const profileSections = [
   {
     title: "Once Upon a Time",
     image: "/hatrang.jpg",
-    description: `Where It All Began
-
-Where my story began—soft memories, curious eyes, and endless wonder. Wrapped in love and gentle care, I grew up dreaming freely.`,
+    description: `Where my story began—soft memories, curious eyes, and endless wonder. Wrapped in love and gentle care, I grew up dreaming freely.`,
   },
 ];
 
