@@ -85,12 +85,13 @@ export default function GalleryDialog({
                     <div className="h-1 w-12 bg-[#d88a9e]" />
                     <span className="font-aesthetic text-xs uppercase tracking-[0.3em] text-[#d88a9e]">Memoir</span>
                   </div>
-                  <h2 className="font-fairy text-4xl md:text-6xl text-[#d88a9e] leading-[1.1] mb-6">
+                  <h2 className="font-fairy text-2xl md:text-4xl leading-tight text-[#d88a9e] mb-6">
                     {item.title}
                   </h2>
                   <div className="relative mb-10">
                     <span className="absolute -left-4 md:-left-8 top-0 text-6xl text-[#e8a4b8]/20 font-serif line-height-1 pointer-events-none">&ldquo;</span>
-                    <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-[1.6] whitespace-pre-wrap relative z-10 first-letter:text-4xl first-letter:font-fairy first-letter:text-[#d88a9e] first-letter:mr-1">
+                    <p className="font-elegant text-base md:text-lg leading-relaxed whitespace-pre-wrap relative z-10 first-letter:text-3xl first-letter:font-fairy first-letter:text-[#d88a9e] first-letter:mr-1">
+
                       {item.description}
                     </p>
                   </div>
