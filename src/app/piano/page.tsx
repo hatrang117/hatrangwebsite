@@ -8,39 +8,39 @@ import GalleryDialog from "@/components/GalleryDialog";
 const pianoContent = [
   { 
     title: "Classical Soul", 
-    description: "Exploring the depths of Chopin and Mozart. Every note is a journey through time and emotion, played with heart.",
-    mediaUrl: "https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg",
-    mediaType: "image" as const
+    description: "From a young age, I developed a deep passion for the piano and began formal lessons in kindergarten with the support of my parents. Although I no longer pursue it at an advanced level, piano has remained a meaningful hobby—one that continues to bring me calm, focus, and a quiet sense of joy.",
+    mediaUrl: "/tapluyen.jpg",
+    mediaType: "image" 
   },
   { 
     title: "Practice Garden", 
-    description: "Where notes bloom like flowers. The daily ritual of connecting with the keys and finding peace in the melody.",
-    mediaUrl: "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg",
-    mediaType: "image" as const
+    description: "This photo was taken with my mother right after the performance. She was overjoyed and deeply proud, holding me close with the brightest smile. In that moment, her happiness became mine as well, turning the performance into more than an achievement—it became a shared memory of encouragement, love, and unwavering support.",
+    mediaUrl: "/voimom.jpg",
+    mediaType: "image" 
   },
   { 
     title: "Performance Night", 
-    description: "Sharing the magic of music with the world. The stage, the lights, and the connection with the audience through every chord.",
-    mediaUrl: "https://images.pexels.com/photos/164743/pexels-photo-164743.jpeg",
-    mediaType: "image" as const
+    description: "This photo captures one of the small recital performances at the end of a course. Although the audience was modest—mostly parents of the students, including my own—I found the experience genuinely joyful and deeply rewarding. Being able to share what I had practiced, even in an intimate setting, taught me confidence and reminded me that performance is not about scale, but about expression and connection.",
+    mediaUrl: "/bieudien.jpg",
+    mediaType: "image" 
   },
   { 
     title: "Musical Dreams", 
-    description: "Letting the keys carry my imagination. A world where sound becomes color and every melody tells a secret story.",
-    mediaUrl: "https://images.pexels.com/photos/45243/piano-keys-music-instrument-45243.jpeg",
-    mediaType: "image" as const
+    description: "This photo was taken with my piano classmates after we finished our recital. Each of us was holding a bouquet of flowers, smiling with pure excitement and pride. It was a deeply memorable moment that captured not only the joy of performing, but also the sense of friendship and shared effort we built in piano class. Those lessons were filled with laughter, encouragement, and some of my happiest memories of learning alongside others.",
+    mediaUrl: "/loptapthe.jpg",
+    mediaType: "image" 
   },
   { 
     title: "The Golden Hour", 
-    description: "The sunlight dancing on the keys. A perfect moment to compose and reflect on the beauty of sound.",
-    mediaUrl: "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg",
-    mediaType: "image" as const
+    description: "This photo captures me at the piano in front of an audience, fully immersed in the performance. In that moment, everything else faded away—the nerves, the surroundings—leaving only the music and my connection with the listeners. Playing in front of others taught me how to stay present under pressure and transform emotion into expression, making the piano not just an instrument, but a bridge between myself and the audience.",
+    mediaUrl: "/luyentap.jpg",
+    mediaType: "image" 
   },
   { 
     title: "Melody in Motion", 
-    description: "Watch the magic happen as fingers dance across the ivory. A visual journey of rhythm and harmony.",
+    description: "This video marks my first performance in a large auditorium, with rows of seats and a full stage set for the piano. I was incredibly nervous leading up to the performance, spending the entire night before preparing carefully with my mother. The recital went exactly as I had hoped, and the experience became a memorable milestone—one that taught me the value of preparation, support, and stepping confidently into unfamiliar spaces.",
     mediaUrl: "https://assets.mixkit.co/videos/preview/mixkit-playing-the-piano-in-close-up-4447-large.mp4",
-    mediaType: "video" as const
+    mediaType: "video" 
   },
 ];
 
