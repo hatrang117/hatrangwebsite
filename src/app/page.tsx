@@ -125,7 +125,7 @@ export default function Home() {
             A Gentle Corner Of My World
           </h2>
           <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-relaxed mb-10 italic">
-            &quot; A place shaped by creativity, curiosity, and the little things that matter most to me;
+            &quot; A place shaped by creativity, curiosity, and the little things that matter most to me"
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -143,7 +143,7 @@ export default function Home() {
 
       <footer className="mt-24 pb-12 text-center relative z-10">
         <p className="font-aesthetic text-lg text-[#7a5a65]">
-          Designed with care, soft dreams, and a love for little details.
+          Designed with care, soft dreams, and a love for little details
         </p>
       </footer>
     </div>
