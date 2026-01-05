@@ -1,140 +1,117 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MagicalFrame from "@/components/MagicalFrame";
 import FloatingElements from "@/components/FloatingElements";
+import GalleryDialog from "@/components/GalleryDialog";
 
 const theatreShows = [
-  {
-    title: "First Big Stage",
-    description:
-      "My debut performance in a large-scale show, stepping onto a major stage for the first time.",
+  { 
+    title: "Leading Role", 
+    description: "My debut as a lead performer on stage. A moment where the spotlight met my dreams and the world stood still.",
+    mediaUrl: "https://images.pexels.com/photos/236102/pexels-photo-236102.jpeg",
+    mediaType: "image" as const
   },
-  {
-    title: "Practice Days",
-    description:
-      "Endless rehearsals, sore muscles, shared laughter, and moments that made everything worth it.",
+  { 
+    title: "Musical Magic", 
+    description: "Singing my heart out in the spotlight. Every note carries the weight of a thousand emotions, shared with an audience.",
+    mediaUrl: "https://images.pexels.com/photos/45258/ballet-production-performance-don-quixote-45258.jpeg",
+    mediaType: "image" as const
   },
-  {
-    title: "Between Beats & Breath",
-    description: "Where connection mattered more than perfection.",
+  { 
+    title: "Dance & Drama", 
+    description: "Where movement tells the story. The stage becomes a canvas where every gesture is a stroke of emotion.",
+    mediaUrl: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg",
+    mediaType: "image" as const
   },
-  {
-    title: "Backstage Moments",
-    description: "The excitement before the curtain rises.",
+  { 
+    title: "Backstage Moments", 
+    description: "The excitement before the curtain rises. The smell of greasepaint, the hum of anticipation, and the bond with the cast.",
+    mediaUrl: "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg",
+    mediaType: "image" as const
   },
-  {
-    title: "Standing Ovation",
-    description: "The most rewarding feeling.",
+  { 
+    title: "Encore Applause", 
+    description: "The final bow after a successful show. The sound of clapping hands is like music to my ears, a reward for the hard work.",
+    mediaUrl: "https://images.pexels.com/photos/236102/pexels-photo-236102.jpeg",
+    mediaType: "image" as const
   },
-  {
-    title: "More Than Performance",
-    description: "What stayed with me long after the music stopped.",
+  { 
+    title: "Rehearsal Flow", 
+    description: "Perfecting every move and line. The journey to the stage is filled with dedication, laughter, and a passion for the craft.",
+    mediaUrl: "https://images.pexels.com/photos/45258/ballet-production-performance-don-quixote-45258.jpeg",
+    mediaType: "image" as const
   },
 ];
 
 export default function Theatre() {
-  const [activeShow, setActiveShow] = useState<null | {
-    title: string;
-    description: string;
-    index: number;
-  }>(null);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Lock background scroll when modal is open
-  useEffect(() => {
-    if (activeShow) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [activeShow]);
+  const openGallery = (index: number) => {
+    setActiveIndex(index);
+    setIsGalleryOpen(true);
+  };
 
   return (
     <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20 relative overflow-hidden bg-[#feeaf0]">
       <FloatingElements />
 
-      {/* HEADER */}
       <header className="mb-20 text-center relative z-10">
-        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] mb-6">
+        <h1 className="font-fairy text-6xl md:text-8xl text-[#d88a9e] text-shadow-fairy mb-6 tracking-tight">
           Theatre Life
         </h1>
         <p className="font-aesthetic text-2xl md:text-3xl text-[#9a7c85]">
-          Between lights and quiet breaths, the stage becomes a place where I
-          listen, transform, and begin again
+          The stage is my garden, every performance a bloom
         </p>
       </header>
 
-      {/* GRID */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
+      <div className="grid grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto relative z-10">
         {theatreShows.map((show, index) => (
-          <button
-            key={index}
-            onClick={() =>
-              setActiveShow({
-                title: show.title,
-                description: show.description,
-                index,
-              })
-            }
-            className="text-left focus:outline-none"
-          >
+          <div key={index} className="w-full">
             <MagicalFrame
               title={show.title}
               description={show.description}
+              mediaUrl={show.mediaUrl}
+              mediaType={show.mediaType}
               index={index}
               aspectRatio="square"
-              className="cursor-pointer hover:scale-[1.03] transition-transform duration-500"
+              className="shadow-xl"
+              onClick={() => openGallery(index)}
             />
-          </button>
+          </div>
         ))}
       </div>
 
-      {/* MODAL */}
-      {activeShow && (
-        <div
-          className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-md flex items-center justify-center px-4"
-          onClick={() => setActiveShow(null)}
-        >
-          <div
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#fff1f5] shadow-2xl p-6 md:p-10"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* CLOSE BUTTON */}
-            <button
-              onClick={() => setActiveShow(null)}
-              className="absolute top-5 right-6 z-[1000] text-4xl text-[#9a7c85] hover:text-[#d88a9e] transition pointer-events-auto"
-              aria-label="Close"
-            >
-              ×
-            </button>
+      <GalleryDialog 
+        isOpen={isGalleryOpen} 
+        onOpenChange={setIsGalleryOpen} 
+        items={theatreShows} 
+        activeIndex={activeIndex} 
+      />
 
-            {/* ZOOMED FRAME */}
-            <div className="mb-8 pointer-events-none">
-              <MagicalFrame
-                title={activeShow.title}
-                description=""
-                index={activeShow.index}
-                aspectRatio="square"
-              />
-            </div>
-
-            {/* DESCRIPTION */}
-            <div className="text-center px-4 pb-4 pointer-events-auto">
-              <h2 className="font-fairy text-4xl text-[#d88a9e] mb-4">
-                {activeShow.title}
-              </h2>
-
-              <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] leading-relaxed">
-                {activeShow.description}
-              </p>
-            </div>
+      <section className="mt-28 max-w-4xl mx-auto text-center relative z-10">
+        <div className="glass-card rounded-[3rem] p-10 md:p-16 border border-[#e8a4b8]/20 relative overflow-hidden">
+          <h2 className="font-fairy text-3xl md:text-4xl text-[#d88a9e] mb-6">
+            The World is a Stage
+          </h2>
+          <p className="font-elegant text-xl md:text-2xl text-[#5c4a50] italic leading-relaxed mb-10">
+            &quot;Theatre is sweet, bold, and full of surprises. In every role, 
+            I plant a seed of emotion and watch it bloom into a performance.&quot;
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            {["Acting", "Singing", "Dancing", "Expression", "Magic"].map((item, i) => (
+              <span key={i} className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card">
+                {item}
+              </span>
+            ))}
           </div>
         </div>
-      )}
+      </section>
 
-      {/* FOOTER */}
       <footer className="mt-24 pb-12 text-center relative z-10">
-        <p className="font-aesthetic text-lg text-[#9a7c85]">
+        <p className="font-aesthetic text-lg text-[#9a7c85] mt-4">
           The curtain never falls in my heart
         </p>
       </footer>
