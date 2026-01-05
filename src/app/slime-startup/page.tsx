@@ -9,7 +9,7 @@ const heroProduct = {
   title: "The Ultimate Slime Experience",
   description: "Our signature collection that started it all. A masterpiece of texture, color, and scent, designed to bring joy and relaxation to your world.",
   mediaUrl: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg",
-  mediaType: "image" as const
+  mediaType: "image" 
 };
 
 const slimeProducts = [
@@ -17,55 +17,55 @@ const slimeProducts = [
     title: "CEO & Founder", 
     description: "Leading with creativity and passion. My vision is to bring magic to every touch and create sensory wonders for everyone.",
     mediaUrl: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Cloud Slime", 
     description: "Soft, fluffy, and dreamy like cotton candy clouds. A sensory experience that transports you to a world of fluff and sweetness.",
     mediaUrl: "https://images.pexels.com/photos/4061662/pexels-photo-4061662.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Strawberry Special", 
     description: "Our signature berry-themed creation. Scented with fresh strawberries and filled with magical glitters.",
     mediaUrl: "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Galaxy Swirl", 
     description: "Swirls of cosmic colors and sparkle. A mesmerizing journey through the stars, right in the palm of your hand.",
     mediaUrl: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Ocean Breeze", 
     description: "Cool, crisp, and refreshing. Like a day at the beach, this slime brings the serenity of the waves to your fingertips.",
     mediaUrl: "https://images.pexels.com/photos/1037994/pexels-photo-1037994.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Lavender Dream", 
     description: "Calming scent and soothing texture. Perfect for unwinding after a long day in the garden of imagination.",
     mediaUrl: "https://images.pexels.com/photos/1037996/pexels-photo-1037996.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Minty Fresh", 
     description: "A burst of cool mint energy. Invigorating and satisfying, this slime is as refreshing as a morning dew.",
     mediaUrl: "https://images.pexels.com/photos/1037991/pexels-photo-1037991.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Gold Leaf", 
     description: "Elegant and luxurious. Shimmering with gold flakes, this slime is a treasure for the senses.",
     mediaUrl: "https://images.pexels.com/photos/1037997/pexels-photo-1037997.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
   { 
     title: "Midnight Sparkle", 
     description: "Deep, mysterious, and full of light. A glittery masterpiece that shines like the night sky.",
     mediaUrl: "https://images.pexels.com/photos/1037998/pexels-photo-1037998.jpeg",
-    mediaType: "image" as const
+    mediaType: "image" 
   },
 ];
 
