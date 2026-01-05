@@ -14,7 +14,7 @@ const heroBook = {
 
 const favoriteBooks = [
   { 
-    title: "A Shelf of Memories", 
+    title: "A Shelf Of Memories", 
     description: "This photo shows my personal bookshelf, which has been part of my room since childhood. When I was younger, it held the books I carefully collected one by one, forming my very first reading corner. As I grew older, my mother donated many of my childhood books to children in need and to younger kids in rural areas. Even so, my bookshelf has always remained full—preserving countless memories, along with the books I have cherished and grown up with over the years.",
     mediaUrl: "/b2.jpg",
     mediaType: "image" 
