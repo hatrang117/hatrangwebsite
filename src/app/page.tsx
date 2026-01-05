@@ -13,34 +13,31 @@ const profileSections = [
   },
   {
     title: "My beloved ones",
-    image: "/loved-ones.jpg",
+    image: "/hatrang.jpg",
     description:
-      "I hold relationships close to my heart. Family and friends are my grounding force—the people who shape who I am and make life feel fuller. I treasure shared meals, long conversations, and the quiet comfort of simply being together. To me, love is time spent, moments shared, and the choice to show up for one another, always.",
+      "I hold relationships close to my heart. Family and friends are my grounding force—the people who shape who I am and make life feel fuller. I treasure shared meals, long conversations, and the quiet comfort of simply being together.",
   },
   {
     title: "My Passions",
-    image: "/passions.jpg",
+    image: "/hatrang.jpg",
     description:
-      "I find joy in simple, creative moments—playing the piano and letting melodies carry my thoughts, baking for the people I love, and experimenting with colors and textures through my small slime shop. When I need quiet inspiration, I turn to books, where stories help me slow down, imagine freely, and see the world from new perspectives. These passions shape how I create, how I rest, and how I express myself every day.",
+      "I find joy in simple, creative moments—playing the piano, baking, reading books, and running my small slime shop.",
   },
   {
     title: "Once Upon a Time",
-    image: "/childhood.jpg",
+    image: "/hatrang.jpg",
     description: `Where It All Began
 
-Where my story began—soft memories, curious eyes, and endless wonder. Wrapped in love and gentle care, I grew up dreaming freely, collecting little moments of joy and imagination. In that safe, happy world, curiosity bloomed, dreams felt possible, and the dreamer I am today quietly began to grow.`,
+Where my story began—soft memories, curious eyes, and endless wonder. Wrapped in love and gentle care, I grew up dreaming freely.`,
   },
 ];
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<{
-    title: string;
-    image: string;
-    description: string;
-    index: number;
-  } | null>(null);
+  const [activeSection, setActiveSection] = useState<
+    (typeof profileSections)[0] & { index: number } | null
+  >(null);
 
-  // 🔒 Lock background scroll when modal opens
+  // 🔒 Lock scroll when modal open
   useEffect(() => {
     document.body.style.overflow = activeSection ? "hidden" : "";
     return () => {
@@ -49,76 +46,70 @@ export default function Home() {
   }, [activeSection]);
 
   return (
-    <div className="min-h-screen py-12 px-6 md:px-12 lg:px-20 bg-[#feeaf0] relative">
+    <div className="min-h-screen bg-[#feeaf0] py-12 px-6 relative">
       <FloatingElements />
 
       {/* HEADER */}
-      <header className="mb-20 text-center relative z-10">
+      <header className="text-center mb-20 relative z-10">
         <h1 className="font-fairy text-6xl md:text-8xl text-[#b86b7e] mb-6">
           Le Ha Trang
         </h1>
-        <p className="font-aesthetic text-2xl text-[#7a5a65]">
+        <p className="text-2xl text-[#7a5a65]">
           Welcome to my enchanted garden
         </p>
       </header>
 
-      {/* GRID – 4 KHUNG */}
+      {/* GRID */}
       <div className="grid grid-cols-2 gap-10 max-w-5xl mx-auto relative z-10">
         {profileSections.map((section, index) => (
           <div
             key={index}
+            onClick={() => setActiveSection({ ...section, index })}
             className="cursor-pointer"
-            onClick={() =>
-              setActiveSection({ ...section, index })
-            }
           >
             <MagicalFrame
               title={section.title}
               description={section.description}
               image={section.image}
-              aspectRatio="square"
-              className="shadow-xl hover:scale-[1.03] transition"
             />
           </div>
         ))}
       </div>
 
-      {/* MODAL – FULL IMAGE + SCROLL CAPTION */}
+      {/* MODAL */}
       {activeSection && (
         <div
           className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md overflow-y-auto"
           onClick={() => setActiveSection(null)}
         >
           <div
-            className="min-h-screen flex items-start justify-center py-16 px-4"
+            className="min-h-screen flex justify-center py-16 px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative max-w-3xl w-full glass-card rounded-[3rem] p-10 md:p-14">
+            <div className="bg-white rounded-[3rem] max-w-3xl w-full p-10 relative">
               {/* CLOSE */}
               <button
                 onClick={() => setActiveSection(null)}
-                className="absolute top-6 right-6 text-2xl text-[#7a5a65] hover:opacity-70"
+                className="absolute top-6 right-6 text-3xl text-gray-500"
               >
                 ×
               </button>
 
               {/* IMAGE */}
-              <div className="mb-10">
-                <MagicalFrame
-                  title={activeSection.title}
-                  description=""
-                  image={activeSection.image}
-                  aspectRatio="square"
-                  className="shadow-2xl pointer-events-none"
+              <div className="aspect-square mb-10">
+                <img
+                  src={activeSection.image}
+                  alt={activeSection.title}
+                  className="w-full h-full object-cover rounded-[2rem]"
                 />
               </div>
 
-              {/* FULL CAPTION */}
-              <h2 className="font-fairy text-4xl text-[#b86b7e] mb-6 text-center">
+              {/* TEXT */}
+              <h2 className="text-4xl text-[#b86b7e] mb-6 text-center">
                 {activeSection.title}
               </h2>
 
-              <p className="font-elegant text-xl text-[#5c4a50] leading-relaxed whitespace-pre-line text-center">
+              <p className="text-lg text-[#5c4a50] leading-relaxed whitespace-pre-line text-center">
                 {activeSection.description}
               </p>
             </div>
@@ -126,9 +117,8 @@ export default function Home() {
         </div>
       )}
 
-      {/* FOOTER */}
-      <footer className="mt-24 text-center text-[#7a5a65] relative z-10">
-        Designed with care, soft dreams, and a love for little details
+      <footer className="mt-24 text-center text-[#7a5a65]">
+        Designed with care and soft dreams ✨
       </footer>
     </div>
   );
