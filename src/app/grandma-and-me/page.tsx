@@ -5,42 +5,49 @@ import MagicalFrame from "@/components/MagicalFrame";
 import FloatingElements from "@/components/FloatingElements";
 import GalleryDialog from "@/components/GalleryDialog";
 
-const photos = [
+type PhotoItem = {
+  title: string;
+  description: string;
+  mediaUrl: string;
+  mediaType: "image";
+};
+
+const photos: PhotoItem[] = [
   { 
     title: "Together Forever", 
     description: "Precious moments with my beloved grandma. Every wrinkle on her face tells a story of love and resilience.",
     mediaUrl: "https://images.pexels.com/photos/3768114/pexels-photo-3768114.jpeg",
-    mediaType: "image" as const
+    mediaType: "image"
   },
   { 
     title: "Sweet Memories", 
     description: "Every moment spent together is a treasure. Her warmth fills my heart with joy and peace.",
     mediaUrl: "https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg",
-    mediaType: "image" as const
+    mediaType: "image"
   },
   { 
     title: "Grandma's Love", 
     description: "Her warmth fills my heart with joy. She is the anchor in my life, guiding me with her wisdom.",
     mediaUrl: "https://images.pexels.com/photos/2050994/pexels-photo-2050994.jpeg",
-    mediaType: "image" as const
+    mediaType: "image"
   },
   { 
     title: "Our Adventures", 
     description: "Exploring the world, hand in hand. From the simplest walk in the park to the grandest dreams, she's always there.",
     mediaUrl: "https://images.pexels.com/photos/3791664/pexels-photo-3791664.jpeg",
-    mediaType: "image" as const
+    mediaType: "image"
   },
   { 
     title: "Kitchen Magic", 
     description: "The secret ingredient is always love. Learning the recipes that have been passed down through generations.",
     mediaUrl: "https://images.pexels.com/photos/3768114/pexels-photo-3768114.jpeg",
-    mediaType: "image" as const
+    mediaType: "image"
   },
   { 
     title: "Story Time", 
     description: "Listening to the tales of old. Every story is a window into a world I never knew, told with such grace.",
     mediaUrl: "https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg",
-    mediaType: "image" as const
+    mediaType: "image"
   },
 ];
 
@@ -102,7 +109,10 @@ export default function GrandmaAndMe() {
           
           <div className="flex flex-wrap justify-center gap-4">
             {["Love", "Wisdom", "Warmth", "Family", "Heritage"].map((word, i) => (
-              <span key={i} className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card">
+              <span
+                key={i}
+                className="px-6 py-2 rounded-full border border-[#e8a4b8]/30 font-aesthetic text-[#d88a9e] glass-card"
+              >
                 {word}
               </span>
             ))}
