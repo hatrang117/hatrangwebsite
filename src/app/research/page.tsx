@@ -6,7 +6,7 @@ import FloatingElements from "@/components/FloatingElements";
 import GalleryDialog from "@/components/GalleryDialog";
 
 const heroResearch = {
-  title: `Startup intention of university students in the economic sector in Hanoi using structural equation modeling`,
+  title:  `Startup intention of university students in the economic sector in Hanoi using structural equation modeling`,
   description: "This research examines the startup intentions of university students in the economic sector in Hanoi, using Structural Equation Modeling (SEM) as the primary analytical method. The study explores how key factors—such as entrepreneurial attitude, perceived behavioral control, and social influence—interact to shape students’ intentions to start a business. By applying SEM, the research provides a structured and data-driven understanding of the relationships between these variables, offering insights into the entrepreneurial mindset of young people in an urban academic context.",
   mediaUrl: "/RE.png",
   mediaType: "image" 
@@ -15,7 +15,7 @@ const heroResearch = {
 const researchPapers = [
   { 
     title: "VIETNAM'S STRATEGIC LOCATION AND WHY IT AFFECTS WORLD POLITICAL INFLUENCE", 
-    description: `Vietnam's location has consistently been regarded as a strategic advantage which had a profound impact on its political standing within the global scene. Vietnam is a Southeast Asian country sharing its borders with China in the north, Laos and Cambodia in the west, and the South China Sea in the east. Vietnam is an important player in regional and international geopolitics because it is located at the crossroads of major land and sea trade routes.
+    description:  `Vietnam's location has consistently been regarded as a strategic advantage which had a profound impact on its political standing within the global scene. Vietnam is a Southeast Asian country sharing its borders with China in the north, Laos and Cambodia in the west, and the South China Sea in the east. Vietnam is an important player in regional and international geopolitics because it is located at the crossroads of major land and sea trade routes.
 
 Vietnam geographically and spatially is in a very advantageous location. Vietnam is a natural bridge linking Asia's continental and maritime economic zones on the regional geopolitical map. Vietnam serves as a gateway to the Southeast Asian and Asian overland transport systems and a portal into the regional maritime economies. Vietnam is indeed an economic and strategic business center in Southeast Asia because the long and thin terrestrial and maritime border of Vietnam easily opens into the East China Sea and the Russian Far East. Vietnam also grants access to South Asia by land through roads via Bangladesh, Thailand, Myanmar, and Cambodia.
 
@@ -41,7 +41,8 @@ Vietnam has all the inherent geopolitical qualities to be a great regional power
 
 The political power of Vietnam on the world stage is greatly enhanced by its strategic location. It became a key player in regional and global politics because of economic integration, adaptive diplomacy, and prioritizing security and development. It is an exemplary model for other countries in the same plight by navigating complicated geopolitical arenas with sustained national interests.
 
-It takes a lengthy process of historical evolution to achieve and sustain geopolitical standing. While some nations have natural geopolitical benefits, the majority of others base their status on projecting their national power and strategic capabilities. Through concerted and concerted national effort, Vietnam is in a position to assertively reinforce its world influence.`,
+It takes a lengthy process of historical evolution to achieve and sustain geopolitical standing. While some nations have natural geopolitical benefits, the majority of others base their status on projecting their national power and strategic capabilities. Through concerted and concerted national effort, Vietnam is in a position to assertively reinforce its world influence.`
+,
     mediaUrl: "/re1.png",
     mediaType: "image" 
   },
@@ -75,7 +76,8 @@ Gig platforms can also play a role in supporting their workers. By offering reso
 
 Financial institutions can develop products and services tailored to the unique needs of gig workers. Flexible loan options, credit products that consider gig work income, and retirement savings plans that accommodate irregular income can help gig workers build financial stability.
 
-The gig economy presents a unique set of financial challenges for young workers. While it offers flexibility and autonomy, it also brings income instability, lack of benefits, and long-term financial implications that can hinder financial security and growth. As the gig economy continues to evolve, it is crucial to recognize and address these challenges to ensure that young workers can build a stable and prosperous financial future.`,
+The gig economy presents a unique set of financial challenges for young workers. While it offers flexibility and autonomy, it also brings income instability, lack of benefits, and long-term financial implications that can hinder financial security and growth. As the gig economy continues to evolve, it is crucial to recognize and address these challenges to ensure that young workers can build a stable and prosperous financial future.`
+,
     mediaUrl: "/re2.png",
     mediaType: "image" 
   },
@@ -89,7 +91,8 @@ Another factor is the lack of female role models in STEM. When young women rarel
 
 Encouraging more women to join and remain in STEM is not only a matter of fairness but also of practical necessity. Studies by McKinsey & Company have shown that companies with greater gender diversity are more innovative and financially successful. By involving women in solving scientific and technological challenges, societies can benefit from diverse perspectives, which often lead to more creative and inclusive solutions.
 
-In conclusion, increasing women’s participation in STEM requires a multifaceted approach. Governments and institutions should promote equal access to education, provide scholarships for female students in STEM, and ensure inclusive workplace policies. At the same time, changing cultural perceptions and highlighting female role models are essential to inspiring the next generation. Greater involvement of women in STEM will not only promote gender equality but also drive global progress.`,
+In conclusion, increasing women’s participation in STEM requires a multifaceted approach. Governments and institutions should promote equal access to education, provide scholarships for female students in STEM, and ensure inclusive workplace policies. At the same time, changing cultural perceptions and highlighting female role models are essential to inspiring the next generation. Greater involvement of women in STEM will not only promote gender equality but also drive global progress.`
+",
     mediaUrl: "/re3.png",
     mediaType: "image" 
   },
@@ -103,8 +106,9 @@ Next, from an economic standpoint, the formation of larger administrative region
 
 Socially, when resources are concentrated in larger, more centralized areas instead of being spread widely across smaller ones, infrastructure planning, industrial development, urbanization, and transportation systems can become more ordered. Merging provinces allows for more efficient arrangement of public services, for instance healthcare, education, and transport, as budgets and resources are more combined. In addition, greater cultural exchange and social interaction among regions may help foster a more cohesive and hospitable society. Despite these promising prospects, the restructuring process poses several challenges that require careful attention. In terms of administration, merging provinces will definitely lead to changes in personnel, the disagreement in reorganization of local government structures, and adjustments to the management system from provincial down to lower levels. Government officials may face unemployment or reassignment and may experience uncertainty due to changes in their work environment. Moreover, harmonizing policies, regulations, and compensation schemes across different regions is a complicated task. Without proper coordination, it could lead to clashes in authority, conflicts of interest, or dissatisfaction among citizens and public servants.
 
-When provinces are merged, big differences in their economic development can cause problems. Richer provinces may have to share their money and investment opportunities with poorer ones. This could make them less competitive and slow down their growth. Culturally, each province has its own identity—different ways of speaking, local traditions, and community ties. If the merger isn’t handled carefully, these unique features could be lost. People might also get upset if the new province changes names, symbols, or moves the capital to another location. Geography and infrastructure also matter. If the new administrative center is too far from where most people live, it will be harder for them to get basic public services. Without careful planning, important services like schools, hospitals, and social support could be disrupted during the transition. We can learn from other countries. In many cases, merging provinces only works well if it comes with deeper and carefully planned reforms, especially giving more power to local authorities and investing in infrastructure. Digital tools, such as online government services and simple electronic processes, help people get what they need faster and avoid long, complicated paperwork. How the government communicates and manages staff during the change is also crucial. For example, Denmark created a clear plan, asked experts for advice, and listened to the public before making decisions. They also had fair policies for civil servants, which helped avoid conflicts. In Germany, two districts could only merge if it was truly needed and had clear benefits. The government shared data and forecasts openly to gain public trust. For Vietnam to succeed in merging provinces, the government must focus on improving services for its people. The goal shouldn’t just be about changing borders, it should be about creating a strong, modern, more people-oriented and sustainable government. Only then will these changes truly help the country grow and improve lives.`,
-    mediaUrl: "/re4.jpeg",
+When provinces are merged, big differences in their economic development can cause problems. Richer provinces may have to share their money and investment opportunities with poorer ones. This could make them less competitive and slow down their growth. Culturally, each province has its own identity—different ways of speaking, local traditions, and community ties. If the merger isn’t handled carefully, these unique features could be lost. People might also get upset if the new province changes names, symbols, or moves the capital to another location. Geography and infrastructure also matter. If the new administrative center is too far from where most people live, it will be harder for them to get basic public services. Without careful planning, important services like schools, hospitals, and social support could be disrupted during the transition. We can learn from other countries. In many cases, merging provinces only works well if it comes with deeper and carefully planned reforms, especially giving more power to local authorities and investing in infrastructure. Digital tools, such as online government services and simple electronic processes, help people get what they need faster and avoid long, complicated paperwork. How the government communicates and manages staff during the change is also crucial. For example, Denmark created a clear plan, asked experts for advice, and listened to the public before making decisions. They also had fair policies for civil servants, which helped avoid conflicts. In Germany, two districts could only merge if it was truly needed and had clear benefits. The government shared data and forecasts openly to gain public trust. For Vietnam to succeed in merging provinces, the government must focus on improving services for its people. The goal shouldn’t just be about changing borders, it should be about creating a strong, modern, more people-oriented and sustainable government. Only then will these changes truly help the country grow and improve lives.`
+,
+    mediaUrl: "/re4.png",
     mediaType: "image" 
   },
 ];
@@ -152,16 +156,17 @@ export default function Research() {
         <div className="grid grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
           {researchPapers.map((paper, index) => (
             <div key={index} className="w-full">
-              <MagicalFrame
-                title={paper.title}
-                description={paper.description}
-                mediaUrl={paper.mediaUrl}
-                mediaType={paper.mediaType}
-                index={index + 1}
-                aspectRatio="square"
-                className="shadow-xl"
-                onClick={() => openGallery(index + 1)}
-              />
+                <MagicalFrame
+                  title={paper.title}
+                  description={paper.description}
+                  mediaUrl={paper.mediaUrl}
+                  mediaType={paper.mediaType}
+                  index={index + 1}
+                  aspectRatio="square"
+                  isCompact={true}
+                  className="shadow-xl"
+                  onClick={() => openGallery(index + 1)}
+                />
             </div>
           ))}
         </div>
