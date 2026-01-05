@@ -7,46 +7,46 @@ import GalleryDialog from "@/components/GalleryDialog";
 
 const heroBook = {
   title: "The Ultimate Reading Journey",
-  description: "A collection of stories that have shaped my imagination and filled my heart with wonder. From classic literature to modern masterpieces.",
-  mediaUrl: "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg",
+  description: "This photo captures a quiet moment of me lying down with a book, something that has been a constant part of my life since childhood. I have always loved reading and collecting books across many genres—from novels and short stories to comics and graphic works. Reading has never felt like a task to me; it is a hobby I turn to for relaxation, curiosity, and the freedom to explore ideas and topics that genuinely interest me.",
+  mediaUrl: "/b1.jpg",
   mediaType: "image" 
 };
 
 const favoriteBooks = [
   { 
     title: "The Secret Garden", 
-    description: "Frances Hodgson Burnett's masterpiece that perfectly encapsulates the magic of nature and the human spirit's ability to bloom.",
-    mediaUrl: "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg",
+    description: "This photo shows my personal bookshelf, which has been part of my room since childhood. When I was younger, it held the books I carefully collected one by one, forming my very first reading corner. As I grew older, my mother donated many of my childhood books to children in need and to younger kids in rural areas. Even so, my bookshelf has always remained full—preserving countless memories, along with the books I have cherished and grown up with over the years.",
+    mediaUrl: "/b2.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Little Women", 
-    description: "The beautiful journey of sisters finding their way. A tale of strength, love, and independence in a world full of possibilities.",
-    mediaUrl: "https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg",
+    title: "Stormy Childhood", 
+    description: "This is one of my favorite books of all time: Tuổi thơ dữ dội by Phùng Quán. It is a powerful historical novel that vividly portrays the lives of young Vietnamese teenagers—around 12 to 14 years old—who joined the youth reconnaissance squad during the resistance against French colonial forces in Huế. Rather than a simple adventure story, it is a deeply moving and realistic depiction of courage, sacrifice, friendship, and love of country seen through the eyes of children whose “childhood” was shaped by war and hardship. The narrative brings into sharp focus the brutality of conflict alongside the extraordinary spirit of those who lived through it, reminding me of the immense sacrifices made by earlier generations and inspiring deep gratitude for the peace and happiness I enjoy today.",
+    mediaUrl: "/b3.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Pride & Prejudice", 
-    description: "Witty, romantic, and timelessly elegant. Finding wonder in every corner of the world through the lens of classic storytelling.",
-    mediaUrl: "https://images.pexels.com/photos/415071/pexels-photo-415071.jpeg",
+    title: "Harriet the Spy", 
+    description: "This photo features Harriet the Spy by Louise Fitzhugh, a book that felt like a quiet companion during my most rebellious years. Through Harriet’s sharp observations, honesty, and inner conflicts, the story reshaped how I viewed the world and myself. It encouraged me to think independently, question freely, and reflect more deeply—making Harriet feel less like a character and more like a friend who helped shift my perspective at a formative time.",
+    mediaUrl: "/b4.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Anne of Green Gables", 
-    description: "Finding wonder in every corner of the world. A curious adventure through a magical world of imagination and beauty.",
-    mediaUrl: "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg",
+    title: "The Paul Street Boys", 
+    description: "This photo features The Paul Street Boys by Ferenc Molnár, a coming-of-age novel about a group of boys who turn a simple vacant lot into a world of loyalty, courage, and belonging. Through childhood games that mirror real conflicts, the story captures themes of friendship, sacrifice, and standing up for what matters—leaving a lasting impression on how I understand bravery and growing up.",
+    mediaUrl: "/b5.jpg",
     mediaType: "image" 
   },
   { 
-    title: "The Great Gatsby", 
-    description: "A story of dreams, love, and the pursuit of happiness. A timeless classic that explores the human condition with grace.",
-    mediaUrl: "https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg",
+    title: "Rose Fairy Tale", 
+    description: "This photo features the Rose Fairy Tale collection, a bedtime story series from my early childhood. When I was very young, my mother and I slowly collected every volume together, from Grimm’s fairy tales to Andersen’s stories and many others. Each night, she would read a story to me, making this collection a constant companion throughout my childhood. Later on, I read these same books to my younger brother. More than just stories, this series played a meaningful role in shaping how I first understood the world during my formative years.",
+    mediaUrl: "/b6.jpg",
     mediaType: "image" 
   },
   { 
-    title: "Wonder", 
-    description: "A beautiful reminder of the power of kindness and the strength of the human spirit. A story that touches every heart.",
-    mediaUrl: "https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg",
+    title: "Wonderland", 
+    description: "Books have always played a deeply important role in my life, especially throughout my childhood, shaping how I see the world and helping form the way I think. Even as I grow older and life becomes busier, I continue to make space for reading—holding onto it as a habit that grounds me, inspires me, and remains a lasting part of who I am.",
+    mediaUrl: "/b7.jppg",
     mediaType: "image" 
   },
 ];
