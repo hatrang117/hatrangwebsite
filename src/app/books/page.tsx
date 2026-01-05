@@ -46,7 +46,7 @@ const favoriteBooks = [
   { 
     title: "Wonderland", 
     description: "Books have always played a deeply important role in my life, especially throughout my childhood, shaping how I see the world and helping form the way I think. Even as I grow older and life becomes busier, I continue to make space for reading—holding onto it as a habit that grounds me, inspires me, and remains a lasting part of who I am.",
-    mediaUrl: "/b7.jppg",
+    mediaUrl: "/b7.jpg",
     mediaType: "image" 
   },
 ];
